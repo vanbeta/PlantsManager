@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D9297BC2795804200697523 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7D9297BB2795804200697523 /* .gitignore */; };
 		7DA938482790624700815C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA938472790624700815C5D /* AppDelegate.swift */; };
 		7DA9384A2790624700815C5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA938492790624700815C5D /* SceneDelegate.swift */; };
 		7DA9384F2790624700815C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA9384D2790624700815C5D /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D9297BB2795804200697523 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7DA938442790624700815C5D /* PlantsManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantsManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA938472790624700815C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DA938492790624700815C5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		7DA9383B2790624600815C5D = {
 			isa = PBXGroup;
 			children = (
+				7D9297BB2795804200697523 /* .gitignore */,
 				7DA938462790624700815C5D /* PlantsManager */,
 				7DA938452790624700815C5D /* Products */,
 			);
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9297BC2795804200697523 /* .gitignore in Resources */,
 				7DA938542790624A00815C5D /* LaunchScreen.storyboard in Resources */,
 				7DA938512790624A00815C5D /* Assets.xcassets in Resources */,
 				7DA9384F2790624700815C5D /* Main.storyboard in Resources */,
