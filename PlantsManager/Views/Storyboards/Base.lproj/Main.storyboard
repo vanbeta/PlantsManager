@@ -11,13 +11,13 @@
         <!--Plants Manager View Controller-->
         <scene sceneID="u0Q-fx-o6q">
             <objects>
-                <viewController storyboardIdentifier="PlantsManagerViewController" id="AUZ-33-g1U" customClass="PlantsManagerViewController" customModule="PlantsManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AUZ-33-g1U" customClass="PlantsManagerViewController" customModule="PlantsManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HXp-Gj-W6Q">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="4BM-mj-YTX">
-                                <rect key="frame" x="86.000000000000014" y="342.33333333333331" width="218.33333333333337" height="159.66666666666669"/>
+                                <rect key="frame" x="86.000000000000014" y="328.66666666666669" width="218.33333333333337" height="187.00000000000006"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-9Y-jbK">
                                         <rect key="frame" x="9" y="0.0" width="200" height="30"/>
@@ -31,11 +31,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-XD-cj0">
                                         <rect key="frame" x="86" y="37" width="46" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yR2-V4-YvA">
-                                        <rect key="frame" x="9" y="64.333333333333371" width="200" height="30"/>
+                                        <rect key="frame" x="9" y="64.333333333333314" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="1Mc-U6-WHw"/>
                                             <constraint firstAttribute="height" constant="30" id="6qY-pL-WNP"/>
@@ -44,18 +44,21 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg2-Ac-kbi">
-                                        <rect key="frame" x="72.333333333333343" y="101.33333333333337" width="73.333333333333343" height="20.333333333333329"/>
+                                        <rect key="frame" x="72.333333333333343" y="101.33333333333331" width="73.333333333333343" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7ZM-Kz-DwG">
-                                        <rect key="frame" x="0.0" y="128.66666666666669" width="218.33333333333334" height="31"/>
+                                        <rect key="frame" x="0.0" y="128.66666666666663" width="218.33333333333334" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-Kv-tqH">
                                                 <rect key="frame" x="0.0" y="0.0" width="101.66666666666667" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Log in"/>
+                                                <connections>
+                                                    <action selector="logInButtonPressed:" destination="AUZ-33-g1U" eventType="touchUpInside" id="nLN-Yn-g4V"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjQ-rb-JS6">
                                                 <rect key="frame" x="116.66666666666666" y="0.0" width="101.66666666666666" height="31"/>
@@ -64,7 +67,17 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnE-9U-d3u">
+                                        <rect key="frame" x="5" y="166.66666666666663" width="208.33333333333334" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="UnE-9U-d3u" firstAttribute="leading" secondItem="4BM-mj-YTX" secondAttribute="leading" constant="5" id="VFT-CK-opT"/>
+                                    <constraint firstAttribute="trailing" secondItem="UnE-9U-d3u" secondAttribute="trailing" constant="5" id="wc9-fp-mkD"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OuK-sG-GIe"/>
@@ -74,6 +87,11 @@
                             <constraint firstItem="4BM-mj-YTX" firstAttribute="centerX" secondItem="HXp-Gj-W6Q" secondAttribute="centerX" id="kT8-4o-1tI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="UnE-9U-d3u" id="lWP-oh-cl8"/>
+                        <outlet property="loginField" destination="ScE-9Y-jbK" id="A2F-2l-Hpk"/>
+                        <outlet property="passwordFiled" destination="yR2-V4-YvA" id="Z2U-xB-PVf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AfF-Et-eXp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,6 +99,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
