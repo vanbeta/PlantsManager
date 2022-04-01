@@ -17,7 +17,7 @@ class PlantsManagerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel() 
+        bindViewModel()
     }
     
     func bindViewModel() {
@@ -26,7 +26,6 @@ class PlantsManagerViewController: UIViewController {
                 self.label.text = statusText
             }
         }
-        
         viewModel.statusColor.bind { statusColor in
             DispatchQueue.main.async {
                 self.label.textColor = statusColor
