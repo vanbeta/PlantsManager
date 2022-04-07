@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Group 3 1.svg",
+      "filename" : "Group 3 1-4.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Group 3 1-5.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Group 3 1-6.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
