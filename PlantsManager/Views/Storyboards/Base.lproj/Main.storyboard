@@ -495,8 +495,7 @@
                             <constraint firstItem="hJg-aH-akW" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FH0-pw-qTF" secondAttribute="bottom" constant="20" id="67T-75-86v"/>
                             <constraint firstItem="JxZ-x1-2sq" firstAttribute="centerX" secondItem="6ZK-pM-Bpf" secondAttribute="centerX" id="7EH-Tx-fyF"/>
                             <constraint firstItem="CRf-qz-VgF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hJg-aH-akW" secondAttribute="top" constant="20" id="EsP-d0-6Yg"/>
-                            <constraint firstItem="qaX-AD-HUR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dXQ-Wg-MuX" secondAttribute="bottom" constant="10" id="KxB-Jg-noP"/>
-                            <constraint firstItem="FH0-pw-qTF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qaX-AD-HUR" secondAttribute="bottom" constant="5" id="SXx-Xn-O27"/>
+                            <constraint firstItem="qaX-AD-HUR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dXQ-Wg-MuX" secondAttribute="bottom" constant="15" id="KxB-Jg-noP"/>
                             <constraint firstItem="lQy-9s-JTI" firstAttribute="top" secondItem="JxZ-x1-2sq" secondAttribute="bottom" constant="10" id="Sir-Jp-mxd"/>
                             <constraint firstItem="qaX-AD-HUR" firstAttribute="top" secondItem="dXQ-Wg-MuX" secondAttribute="bottom" priority="480" constant="183.5" id="TmM-1p-be5"/>
                             <constraint firstItem="JxZ-x1-2sq" firstAttribute="leading" secondItem="hJg-aH-akW" secondAttribute="leading" constant="20" id="UvL-cS-XHZ"/>
