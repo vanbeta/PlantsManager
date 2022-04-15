@@ -239,6 +239,10 @@
                             <constraint firstItem="zYy-6I-GHW" firstAttribute="top" secondItem="qw2-MV-sKT" secondAttribute="top" priority="500" constant="95" id="z7W-vh-6UV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="rBP-ji-e9R" id="BcQ-GI-tsU"/>
+                        <outlet property="passwordTextField" destination="SEh-Wo-6Vh" id="NY7-cS-ZeB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26p-EU-vkH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,6 +438,11 @@
                             <constraint firstItem="CRf-qz-VgF" firstAttribute="top" secondItem="hJg-aH-akW" secondAttribute="top" priority="495" constant="95" id="tVa-sk-c1c"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="A5C-fe-JFf" id="D1O-bt-CID"/>
+                        <outlet property="nameTextField" destination="iHP-4X-7k2" id="KWl-L8-Ycf"/>
+                        <outlet property="passwordTextField" destination="gSq-3E-Vr0" id="bC6-8k-M4l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRq-WI-4cS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

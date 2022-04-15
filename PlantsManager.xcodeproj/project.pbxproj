@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D22C3DA28099D9D0002FD4B /* SettingsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C3D928099D9D0002FD4B /* SettingsTextField.swift */; };
 		7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6812807E2A10024A00A /* Coordinator.swift */; };
 		7D7EB6842807E3560024A00A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6832807E3560024A00A /* AppCoordinator.swift */; };
 		7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6862807E4610024A00A /* Strorybordable.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D22C3D928099D9D0002FD4B /* SettingsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextField.swift; sourceTree = "<group>"; };
 		7D7EB6812807E2A10024A00A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7D7EB6832807E3560024A00A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7D7EB6862807E4610024A00A /* Strorybordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strorybordable.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D22C3D828099D730002FD4B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7D22C3D928099D9D0002FD4B /* SettingsTextField.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		7D7EB67F2807E2600024A00A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 		7D9297BF2796E31A00697523 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7D22C3D828099D730002FD4B /* Protocols */,
 				7D9297C02796E32F00697523 /* Bindings */,
 				7D9297C42797FA1500697523 /* ViewModel.swift */,
 				7D7EB68E280846E60024A00A /* WelcomViewModel.swift */,
@@ -245,6 +256,7 @@
 				7D7EB68D280814820024A00A /* CreateAccountViewController.swift in Sources */,
 				7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */,
 				7DA938482790624700815C5D /* AppDelegate.swift in Sources */,
+				7D22C3DA28099D9D0002FD4B /* SettingsTextField.swift in Sources */,
 				7D9297C72797FB9700697523 /* Dynamic.swift in Sources */,
 				7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */,
 				7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */,
