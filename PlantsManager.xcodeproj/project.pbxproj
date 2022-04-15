@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6812807E2A10024A00A /* Coordinator.swift */; };
+		7D7EB6842807E3560024A00A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6832807E3560024A00A /* AppCoordinator.swift */; };
+		7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6862807E4610024A00A /* Strorybordable.swift */; };
+		7D7EB6892807E7830024A00A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6882807E7830024A00A /* WelcomeViewController.swift */; };
+		7D7EB68B2808146A0024A00A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB68A2808146A0024A00A /* LoginViewController.swift */; };
+		7D7EB68D280814820024A00A /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB68C280814820024A00A /* CreateAccountViewController.swift */; };
+		7D7EB68F280846E60024A00A /* WelcomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB68E280846E60024A00A /* WelcomViewModel.swift */; };
+		7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB690280846F30024A00A /* LoginViewModel.swift */; };
+		7D7EB6942808470D0024A00A /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6932808470D0024A00A /* CreateAccountViewModel.swift */; };
 		7D9297BC2795804200697523 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7D9297BB2795804200697523 /* .gitignore */; };
 		7D9297C32797147F00697523 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9297C22797147F00697523 /* User.swift */; };
 		7D9297C52797FA1500697523 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9297C42797FA1500697523 /* ViewModel.swift */; };
@@ -19,6 +28,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D7EB6812807E2A10024A00A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7D7EB6832807E3560024A00A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		7D7EB6862807E4610024A00A /* Strorybordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strorybordable.swift; sourceTree = "<group>"; };
+		7D7EB6882807E7830024A00A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		7D7EB68A2808146A0024A00A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7D7EB68C280814820024A00A /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		7D7EB68E280846E60024A00A /* WelcomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewModel.swift; sourceTree = "<group>"; };
+		7D7EB690280846F30024A00A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7D7EB6932808470D0024A00A /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		7D9297BB2795804200697523 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7D9297C22797147F00697523 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7D9297C42797FA1500697523 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -43,6 +61,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D7EB67F2807E2600024A00A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				7D7EB6802807E2800024A00A /* Protocols */,
+				7D7EB6832807E3560024A00A /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		7D7EB6802807E2800024A00A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7D7EB6812807E2A10024A00A /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7D7EB6852807E43E0024A00A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7D7EB6862807E4610024A00A /* Strorybordable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		7D9297BD2796E2C900697523 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +97,12 @@
 		7D9297BE2796E2E400697523 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D7EB6852807E43E0024A00A /* Protocols */,
 				7D9297C1279713E900697523 /* Storyboards */,
 				7DA9385B27906AE400815C5D /* PlantsManagerViewController.swift */,
+				7D7EB6882807E7830024A00A /* WelcomeViewController.swift */,
+				7D7EB68A2808146A0024A00A /* LoginViewController.swift */,
+				7D7EB68C280814820024A00A /* CreateAccountViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -65,6 +112,9 @@
 			children = (
 				7D9297C02796E32F00697523 /* Bindings */,
 				7D9297C42797FA1500697523 /* ViewModel.swift */,
+				7D7EB68E280846E60024A00A /* WelcomViewModel.swift */,
+				7D7EB690280846F30024A00A /* LoginViewModel.swift */,
+				7D7EB6932808470D0024A00A /* CreateAccountViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -106,6 +156,7 @@
 		7DA938462790624700815C5D /* PlantsManager */ = {
 			isa = PBXGroup;
 			children = (
+				7D7EB67F2807E2600024A00A /* Coordinators */,
 				7D9297BF2796E31A00697523 /* ViewModels */,
 				7D9297BE2796E2E400697523 /* Views */,
 				7D9297BD2796E2C900697523 /* Models */,
@@ -188,11 +239,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D7EB6892807E7830024A00A /* WelcomeViewController.swift in Sources */,
 				7D9297C52797FA1500697523 /* ViewModel.swift in Sources */,
 				7D9297C32797147F00697523 /* User.swift in Sources */,
+				7D7EB68D280814820024A00A /* CreateAccountViewController.swift in Sources */,
+				7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */,
 				7DA938482790624700815C5D /* AppDelegate.swift in Sources */,
 				7D9297C72797FB9700697523 /* Dynamic.swift in Sources */,
+				7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */,
+				7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */,
 				7DA9385C27906AE400815C5D /* PlantsManagerViewController.swift in Sources */,
+				7D7EB6942808470D0024A00A /* CreateAccountViewModel.swift in Sources */,
+				7D7EB68B2808146A0024A00A /* LoginViewController.swift in Sources */,
+				7D7EB6842807E3560024A00A /* AppCoordinator.swift in Sources */,
+				7D7EB68F280846E60024A00A /* WelcomViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

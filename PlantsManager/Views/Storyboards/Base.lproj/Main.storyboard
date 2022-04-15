@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="Xpg-tu-KLj">
             <objects>
-                <viewController id="ktJ-pd-2jj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="ktJ-pd-2jj" customClass="WelcomeViewController" customModule="PlantsManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q9s-CH-kBG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,6 +56,9 @@
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="baseBackgroundColor" red="0.25490196079999999" green="0.34901960780000002" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="ktJ-pd-2jj" eventType="touchUpInside" id="5s5-oF-BG0"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="center" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fW7-En-NcM">
                                 <rect key="frame" x="63.5" y="764" width="287" height="32"/>
@@ -78,6 +81,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="createAccountButtonClicced:" destination="ktJ-pd-2jj" eventType="touchUpInside" id="YgD-MO-xr1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -115,99 +121,10 @@
             </objects>
             <point key="canvasLocation" x="-1159.4202898550725" y="52.232142857142854"/>
         </scene>
-        <!--Plants Manager View Controller-->
-        <scene sceneID="u0Q-fx-o6q">
-            <objects>
-                <viewController id="AUZ-33-g1U" customClass="PlantsManagerViewController" customModule="PlantsManager" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HXp-Gj-W6Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="4BM-mj-YTX">
-                                <rect key="frame" x="84" y="352.5" width="246" height="191"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-9Y-jbK">
-                                        <rect key="frame" x="23" y="0.0" width="200" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ElG-ij-bM7"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Qwf-at-LgQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-XD-cj0">
-                                        <rect key="frame" x="100" y="37" width="46" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yR2-V4-YvA">
-                                        <rect key="frame" x="23" y="64.5" width="200" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="1Mc-U6-WHw"/>
-                                            <constraint firstAttribute="height" constant="30" id="6qY-pL-WNP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg2-Ac-kbi">
-                                        <rect key="frame" x="86.5" y="101.5" width="73.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7ZM-Kz-DwG">
-                                        <rect key="frame" x="0.0" y="129" width="246" height="34.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-Kv-tqH">
-                                                <rect key="frame" x="0.0" y="0.0" width="115.5" height="34.5"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Log in"/>
-                                                <connections>
-                                                    <action selector="logInButtonPressed:" destination="AUZ-33-g1U" eventType="touchUpInside" id="nLN-Yn-g4V"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjQ-rb-JS6">
-                                                <rect key="frame" x="130.5" y="0.0" width="115.5" height="34.5"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Registration"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnE-9U-d3u">
-                                        <rect key="frame" x="5" y="170.5" width="236" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="UnE-9U-d3u" firstAttribute="leading" secondItem="4BM-mj-YTX" secondAttribute="leading" constant="5" id="VFT-CK-opT"/>
-                                    <constraint firstAttribute="trailing" secondItem="UnE-9U-d3u" secondAttribute="trailing" constant="5" id="wc9-fp-mkD"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="OuK-sG-GIe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="4BM-mj-YTX" firstAttribute="centerY" secondItem="HXp-Gj-W6Q" secondAttribute="centerY" id="Nf9-lg-PyD"/>
-                            <constraint firstItem="4BM-mj-YTX" firstAttribute="centerX" secondItem="HXp-Gj-W6Q" secondAttribute="centerX" id="kT8-4o-1tI"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="label" destination="UnE-9U-d3u" id="lWP-oh-cl8"/>
-                        <outlet property="loginField" destination="ScE-9Y-jbK" id="A2F-2l-Hpk"/>
-                        <outlet property="passwordFiled" destination="yR2-V4-YvA" id="Z2U-xB-PVf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AfF-Et-eXp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1110" y="52"/>
-        </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="sBv-IW-zoZ">
             <objects>
-                <viewController id="RQf-NQ-Mrh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="RQf-NQ-Mrh" customClass="LoginViewController" customModule="PlantsManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Znc-3L-BE4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,6 +156,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="createAccountButtonClicced:" destination="RQf-NQ-Mrh" eventType="touchUpInside" id="eFz-FA-yJo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -324,10 +244,10 @@
             </objects>
             <point key="canvasLocation" x="-479.71014492753625" y="52.232142857142854"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Account View Controller-->
         <scene sceneID="D9o-66-hJh">
             <objects>
-                <viewController id="nPY-aB-t6V" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAccountViewController" id="nPY-aB-t6V" customClass="CreateAccountViewController" customModule="PlantsManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ZK-pM-Bpf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,6 +274,9 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signInButtonPressed:" destination="nPY-aB-t6V" eventType="touchUpInside" id="6g5-c3-khf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -428,7 +351,7 @@
                                 </buttonConfiguration>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXQ-Wg-MuX">
-                                <rect key="frame" x="20" y="484" width="291" height="16"/>
+                                <rect key="frame" x="20" y="484" width="288" height="16"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5dJ-tU-rSI">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="16"/>
@@ -471,13 +394,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovj-4v-an3">
-                                        <rect key="frame" x="228.5" y="0.0" width="62.5" height="16"/>
+                                        <rect key="frame" x="228.5" y="0.0" width="59.5" height="16"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Terms">
                                                     <attributes>
-                                                        <font key="NSFont" size="14" name="Helvetica"/>
+                                                        <font key="NSFont" size="13" name="Helvetica"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -519,9 +442,6 @@
     </scenes>
     <resources>
         <image name="Image" width="244" height="280"/>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
