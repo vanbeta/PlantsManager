@@ -360,14 +360,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5dJ-tU-rSI">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="16"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db0-Og-qQl">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db0-Og-qQl">
                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="AgH-Fe-vkD"/>
                                                     <constraint firstAttribute="width" constant="16" id="VCX-gM-Bag"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled"/>
+                                                <buttonConfiguration key="configuration" style="filled">
+                                                    <color key="baseBackgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="checkBoxPressed:" destination="nPY-aB-t6V" eventType="touchUpInside" id="Oji-dT-7Ek"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with our" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZC-zL-QMm">
                                                 <rect key="frame" x="26" y="0.0" width="94" height="16"/>
@@ -377,12 +382,12 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSl-oj-eLZ">
-                                        <rect key="frame" x="120" y="0.0" width="85.5" height="16"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovj-4v-an3">
+                                        <rect key="frame" x="120" y="0.0" width="59.5" height="16"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Conditions">
+                                                <fragment content="Terms">
                                                     <attributes>
                                                         <font key="NSFont" size="13" name="Helvetica"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -392,17 +397,17 @@
                                         </buttonConfiguration>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFQ-f0-cQo">
-                                        <rect key="frame" x="205.5" y="0.0" width="23" height="16"/>
+                                        <rect key="frame" x="179.5" y="0.0" width="23" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.6029591339" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovj-4v-an3">
-                                        <rect key="frame" x="228.5" y="0.0" width="59.5" height="16"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSl-oj-eLZ">
+                                        <rect key="frame" x="202.5" y="0.0" width="85.5" height="16"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Terms">
+                                                <fragment content="Conditions">
                                                     <attributes>
                                                         <font key="NSFont" size="13" name="Helvetica"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -439,6 +444,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkBox" destination="Db0-Og-qQl" id="WLu-g0-hkw"/>
                         <outlet property="emailTextField" destination="A5C-fe-JFf" id="D1O-bt-CID"/>
                         <outlet property="nameTextField" destination="iHP-4X-7k2" id="KWl-L8-Ycf"/>
                         <outlet property="passwordTextField" destination="gSq-3E-Vr0" id="bC6-8k-M4l"/>
@@ -451,6 +457,9 @@
     </scenes>
     <resources>
         <image name="Image" width="244" height="280"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
