@@ -22,18 +22,14 @@ class CreateAccountViewController: UIViewController, Storybordable, SettingsText
         
         checkBox.setImage(UIImage(named:"uncheckedCheckbox"), for: .normal)
         checkBox.setImage(UIImage(named:"checkedCheckbox"), for: .selected)
+        
         settingsTextField(nameTextField)
         settingsTextField(emailTextField)
         settingsTextField(passwordTextField)
     }
     
     @IBAction func checkBoxPressed(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveLinear, animations: {}) { (success) in
-            UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveLinear, animations: {
-                sender.isSelected = !sender.isSelected
-                sender.transform = .identity
-            }, completion: nil)
-        }
+        sender.isSelected = !sender.isSelected
     }
     
     @IBAction func signInButtonPressed(_ sender: Any) {
