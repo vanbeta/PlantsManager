@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateAccountViewController: UIViewController, Storybordable, SettingsTextField {
+class CreateAccountViewController: UIViewController, Storybordable {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -15,7 +15,7 @@ class CreateAccountViewController: UIViewController, Storybordable, SettingsText
     @IBOutlet weak var checkBox: UIButton!
     
     weak var coordinator: AppCoordinator?
-    var viewModel: CreateAccountViewModel?
+    var viewModelDelegate: CreateAccountDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,8 @@ class CreateAccountViewController: UIViewController, Storybordable, SettingsText
         settingsTextField(nameTextField)
         settingsTextField(emailTextField)
         settingsTextField(passwordTextField)
+        
+        createForgotPasswordButton(to: passwordTextField)
     }
     
     @IBAction func checkBoxPressed(_ sender: UIButton) {
@@ -34,5 +36,13 @@ class CreateAccountViewController: UIViewController, Storybordable, SettingsText
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         coordinator?.showLogin()
+    }
+    
+    @IBAction func termsButtonPressed(_ sender: Any) {
+        viewModelDelegate?.getTerms(view: self)
+    }
+    
+    @IBAction func conditionsButtonPressed(_ sender: Any) {
+        viewModelDelegate?.getConditions(view: self)
     }
 }

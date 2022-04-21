@@ -7,12 +7,12 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, Storybordable, SettingsTextField {
+class LoginViewController: UIViewController, Storybordable {
     
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
+    
     weak var coordinator: AppCoordinator?
     var viewModel: LoginViewModel?
 
@@ -20,6 +20,8 @@ class LoginViewController: UIViewController, Storybordable, SettingsTextField {
         super.viewDidLoad()
         settingsTextField(emailTextField)
         settingsTextField(passwordTextField)
+        
+        createForgotPasswordButton(to: passwordTextField)
     }
     
     @IBAction func createAccountButtonClicced(_ sender: Any) {

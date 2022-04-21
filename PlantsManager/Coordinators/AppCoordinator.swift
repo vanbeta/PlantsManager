@@ -39,7 +39,8 @@ class AppCoordinator: Coordinator {
     func showCreateAccount() {
         let vc = CreateAccountViewController.createObject()
         vc.coordinator = self
-        vc.viewModel = CreateAccountViewModel()
+        let viewModel = CreateAccountViewModel()
+        vc.viewModelDelegate = viewModel
         navigationController.viewControllers.removeAll()
         navigationController.pushViewController(vc, animated: true)
     }

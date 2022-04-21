@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D22C3DA28099D9D0002FD4B /* SettingsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C3D928099D9D0002FD4B /* SettingsTextField.swift */; };
+		7D4F1B75280FF50D00B579EC /* UIextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B74280FF50D00B579EC /* UIextension.swift */; };
+		7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */; };
 		7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6812807E2A10024A00A /* Coordinator.swift */; };
 		7D7EB6842807E3560024A00A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6832807E3560024A00A /* AppCoordinator.swift */; };
 		7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6862807E4610024A00A /* Strorybordable.swift */; };
@@ -29,7 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7D22C3D928099D9D0002FD4B /* SettingsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextField.swift; sourceTree = "<group>"; };
+		7D4F1B74280FF50D00B579EC /* UIextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIextension.swift; sourceTree = "<group>"; };
+		7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountDelegate.swift; sourceTree = "<group>"; };
 		7D7EB6812807E2A10024A00A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7D7EB6832807E3560024A00A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7D7EB6862807E4610024A00A /* Strorybordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strorybordable.swift; sourceTree = "<group>"; };
@@ -63,12 +65,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7D22C3D828099D730002FD4B /* Protocols */ = {
+		7D4F1B73280FF4E300B579EC /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7D22C3D928099D9D0002FD4B /* SettingsTextField.swift */,
+				7D4F1B74280FF50D00B579EC /* UIextension.swift */,
 			);
-			path = Protocols;
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		7D7EB67F2807E2600024A00A /* Coordinators */ = {
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				7D7EB6862807E4610024A00A /* Strorybordable.swift */,
+				7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -107,6 +110,7 @@
 		7D9297BE2796E2E400697523 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D4F1B73280FF4E300B579EC /* extensions */,
 				7D7EB6852807E43E0024A00A /* Protocols */,
 				7D9297C1279713E900697523 /* Storyboards */,
 				7DA9385B27906AE400815C5D /* PlantsManagerViewController.swift */,
@@ -120,7 +124,6 @@
 		7D9297BF2796E31A00697523 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				7D22C3D828099D730002FD4B /* Protocols */,
 				7D9297C02796E32F00697523 /* Bindings */,
 				7D9297C42797FA1500697523 /* ViewModel.swift */,
 				7D7EB68E280846E60024A00A /* WelcomViewModel.swift */,
@@ -255,12 +258,13 @@
 				7D9297C32797147F00697523 /* User.swift in Sources */,
 				7D7EB68D280814820024A00A /* CreateAccountViewController.swift in Sources */,
 				7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */,
+				7D4F1B75280FF50D00B579EC /* UIextension.swift in Sources */,
 				7DA938482790624700815C5D /* AppDelegate.swift in Sources */,
-				7D22C3DA28099D9D0002FD4B /* SettingsTextField.swift in Sources */,
 				7D9297C72797FB9700697523 /* Dynamic.swift in Sources */,
 				7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */,
 				7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */,
 				7DA9385C27906AE400815C5D /* PlantsManagerViewController.swift in Sources */,
+				7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */,
 				7D7EB6942808470D0024A00A /* CreateAccountViewModel.swift in Sources */,
 				7D7EB68B2808146A0024A00A /* LoginViewController.swift in Sources */,
 				7D7EB6842807E3560024A00A /* AppCoordinator.swift in Sources */,
