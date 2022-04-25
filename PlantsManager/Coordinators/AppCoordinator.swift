@@ -30,9 +30,13 @@ class AppCoordinator: Coordinator {
     }
     
     func showLogin() {
+        model.logins.append(User(login: "admin", password: "admin"))
+
         let vc = LoginViewController.createObject()
         vc.coordinator = self
-        vc.viewModel = LoginViewModel()
+        let viewModel = LoginViewModel()
+        viewModel.setModel(model: model)
+        vc.viewModelDelegate = viewModel
         navigationController.viewControllers.removeAll()
         navigationController.pushViewController(vc, animated: true)
     }

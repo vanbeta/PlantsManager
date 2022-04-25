@@ -17,13 +17,9 @@ struct User {
 class Users {
     
     
-    private var logins: [User] = []
-    
+    var logins: [User] = []
+        
     func addUser(name: String, password: String) {
         logins.append(User(login: name, password: password))
-    }
-    
-    func usersSize() -> Int {
-        return logins.count
     }
 }

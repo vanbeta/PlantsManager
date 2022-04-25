@@ -157,7 +157,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="createAccountButtonClicced:" destination="RQf-NQ-Mrh" eventType="touchUpInside" id="eFz-FA-yJo"/>
+                                            <action selector="createAccountButtonClicked:" destination="RQf-NQ-Mrh" eventType="touchUpInside" id="U8r-Y6-vOV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -179,6 +179,9 @@
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="baseBackgroundColor" red="0.25490196079999999" green="0.34901960780000002" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="RQf-NQ-Mrh" eventType="touchUpInside" id="dSE-d7-Lqd"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TtR-s8-IzA">
                                 <rect key="frame" x="20" y="232" width="374" height="130"/>

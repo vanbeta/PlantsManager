@@ -25,6 +25,7 @@
 		7DA9384F2790624700815C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA9384D2790624700815C5D /* Main.storyboard */; };
 		7DA938512790624A00815C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA938502790624A00815C5D /* Assets.xcassets */; };
 		7DA938542790624A00815C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA938522790624A00815C5D /* LaunchScreen.storyboard */; };
+		7DFB40E92816C89F00D0FEE3 /* LoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40E82816C89F00D0FEE3 /* LoginViewModelDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		7DA938502790624A00815C5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA938532790624A00815C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DA938552790624A00815C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DFB40E82816C89F00D0FEE3 /* LoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				7D7EB6862807E4610024A00A /* Strorybordable.swift */,
 				7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */,
+				7DFB40E82816C89F00D0FEE3 /* LoginViewModelDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */,
 				7D4F1B75280FF50D00B579EC /* UIextension.swift in Sources */,
 				7DA938482790624700815C5D /* AppDelegate.swift in Sources */,
+				7DFB40E92816C89F00D0FEE3 /* LoginViewModelDelegate.swift in Sources */,
 				7D9297C72797FB9700697523 /* Dynamic.swift in Sources */,
 				7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */,
 				7D4F1B7928129DF100B579EC /* Users.swift in Sources */,

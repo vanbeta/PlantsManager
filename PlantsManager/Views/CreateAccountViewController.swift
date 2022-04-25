@@ -33,7 +33,7 @@ class CreateAccountViewController: UIViewController, Storybordable {
     }
     
     func bindAlert() {
-        viewModelDelegate?.getShouldShowAlert.bind { (titleText, text)  in
+        viewModelDelegate?.getShowAlert.bind { (titleText, text)  in
             DispatchQueue.main.async {
                 self.showAlert(with: titleText, and: text)
             }

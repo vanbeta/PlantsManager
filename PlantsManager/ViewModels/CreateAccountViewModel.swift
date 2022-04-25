@@ -12,7 +12,7 @@ class CreateAccountViewModel {
 
     
     var model: Users?
-    var shouldShowAlert = Dynamic(("", ""))
+    var showAlert = Dynamic(("", ""))
     
     func setModel(model: Users) {
         self.model = model
@@ -22,15 +22,15 @@ class CreateAccountViewModel {
 extension CreateAccountViewModel: CreateAccountDelegate {
 
     
-    var getShouldShowAlert: Dynamic<(String, String)> {
-        return shouldShowAlert
+    var getShowAlert: Dynamic<(String, String)> {
+        return showAlert
     }
                     
     func getTerms() {
-        getShouldShowAlert.value = ("Terms", "We need your soul!")
+        getShowAlert.value = ("Terms", "We need your soul!")
     }
     
     func getConditions() {
-        getShouldShowAlert.value = ("Conditions", "And all your money!")
+        getShowAlert.value = ("Conditions", "And all your money!")
     }
 }

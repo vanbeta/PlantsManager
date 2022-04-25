@@ -11,7 +11,7 @@ import UIKit
 protocol CreateAccountDelegate: AnyObject {
     
     
-    var getShouldShowAlert: Dynamic<(String, String)> { get }
+    var getShowAlert: Dynamic<(String, String)> { get }
     func getTerms()
     func getConditions()
 }
