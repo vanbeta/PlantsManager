@@ -11,10 +11,11 @@ class AppCoordinator: Coordinator {
     
     
     var navigationController: UINavigationController
-    var isLoggedIn: Bool = false
-    
+    var model: Users
+        
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        model = Users()
     }
     
     func start() {
@@ -40,10 +41,9 @@ class AppCoordinator: Coordinator {
         let vc = CreateAccountViewController.createObject()
         vc.coordinator = self
         let viewModel = CreateAccountViewModel()
+        viewModel.setModel(model: model)
         vc.viewModelDelegate = viewModel
         navigationController.viewControllers.removeAll()
         navigationController.pushViewController(vc, animated: true)
     }
-    
-    
 }

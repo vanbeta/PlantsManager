@@ -28,6 +28,16 @@ class CreateAccountViewController: UIViewController, Storybordable {
         settingsTextField(passwordTextField)
         
         createForgotPasswordButton(to: passwordTextField)
+        
+        bindAlert()
+    }
+    
+    func bindAlert() {
+        viewModelDelegate?.getShouldShowAlert.bind { (titleText, text)  in
+            DispatchQueue.main.async {
+                self.showAlert(with: titleText, and: text)
+            }
+        }
     }
     
     @IBAction func checkBoxPressed(_ sender: UIButton) {
@@ -39,10 +49,10 @@ class CreateAccountViewController: UIViewController, Storybordable {
     }
     
     @IBAction func termsButtonPressed(_ sender: Any) {
-        viewModelDelegate?.getTerms(view: self)
+        viewModelDelegate?.getTerms()
     }
     
     @IBAction func conditionsButtonPressed(_ sender: Any) {
-        viewModelDelegate?.getConditions(view: self)
+        viewModelDelegate?.getConditions()
     }
 }

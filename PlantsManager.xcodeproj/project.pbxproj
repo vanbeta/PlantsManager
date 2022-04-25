@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D4F1B75280FF50D00B579EC /* UIextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B74280FF50D00B579EC /* UIextension.swift */; };
 		7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */; };
+		7D4F1B7928129DF100B579EC /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B7828129DF100B579EC /* Users.swift */; };
 		7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6812807E2A10024A00A /* Coordinator.swift */; };
 		7D7EB6842807E3560024A00A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6832807E3560024A00A /* AppCoordinator.swift */; };
 		7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6862807E4610024A00A /* Strorybordable.swift */; };
@@ -19,19 +20,17 @@
 		7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB690280846F30024A00A /* LoginViewModel.swift */; };
 		7D7EB6942808470D0024A00A /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EB6932808470D0024A00A /* CreateAccountViewModel.swift */; };
 		7D9297BC2795804200697523 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7D9297BB2795804200697523 /* .gitignore */; };
-		7D9297C32797147F00697523 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9297C22797147F00697523 /* User.swift */; };
-		7D9297C52797FA1500697523 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9297C42797FA1500697523 /* ViewModel.swift */; };
 		7D9297C72797FB9700697523 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9297C62797FB9700697523 /* Dynamic.swift */; };
 		7DA938482790624700815C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA938472790624700815C5D /* AppDelegate.swift */; };
 		7DA9384F2790624700815C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA9384D2790624700815C5D /* Main.storyboard */; };
 		7DA938512790624A00815C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA938502790624A00815C5D /* Assets.xcassets */; };
 		7DA938542790624A00815C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA938522790624A00815C5D /* LaunchScreen.storyboard */; };
-		7DA9385C27906AE400815C5D /* PlantsManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA9385B27906AE400815C5D /* PlantsManagerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D4F1B74280FF50D00B579EC /* UIextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIextension.swift; sourceTree = "<group>"; };
 		7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountDelegate.swift; sourceTree = "<group>"; };
+		7D4F1B7828129DF100B579EC /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		7D7EB6812807E2A10024A00A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7D7EB6832807E3560024A00A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7D7EB6862807E4610024A00A /* Strorybordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strorybordable.swift; sourceTree = "<group>"; };
@@ -42,8 +41,6 @@
 		7D7EB690280846F30024A00A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7D7EB6932808470D0024A00A /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		7D9297BB2795804200697523 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		7D9297C22797147F00697523 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		7D9297C42797FA1500697523 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		7D9297C62797FB9700697523 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		7DA938442790624700815C5D /* PlantsManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantsManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA938472790624700815C5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +48,6 @@
 		7DA938502790624A00815C5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA938532790624A00815C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DA938552790624A00815C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DA9385B27906AE400815C5D /* PlantsManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsManagerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +98,7 @@
 		7D9297BD2796E2C900697523 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7D9297C22797147F00697523 /* User.swift */,
+				7D4F1B7828129DF100B579EC /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,7 +109,6 @@
 				7D4F1B73280FF4E300B579EC /* extensions */,
 				7D7EB6852807E43E0024A00A /* Protocols */,
 				7D9297C1279713E900697523 /* Storyboards */,
-				7DA9385B27906AE400815C5D /* PlantsManagerViewController.swift */,
 				7D7EB6882807E7830024A00A /* WelcomeViewController.swift */,
 				7D7EB68A2808146A0024A00A /* LoginViewController.swift */,
 				7D7EB68C280814820024A00A /* CreateAccountViewController.swift */,
@@ -125,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				7D9297C02796E32F00697523 /* Bindings */,
-				7D9297C42797FA1500697523 /* ViewModel.swift */,
 				7D7EB68E280846E60024A00A /* WelcomViewModel.swift */,
 				7D7EB690280846F30024A00A /* LoginViewModel.swift */,
 				7D7EB6932808470D0024A00A /* CreateAccountViewModel.swift */,
@@ -254,16 +248,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7EB6892807E7830024A00A /* WelcomeViewController.swift in Sources */,
-				7D9297C52797FA1500697523 /* ViewModel.swift in Sources */,
-				7D9297C32797147F00697523 /* User.swift in Sources */,
 				7D7EB68D280814820024A00A /* CreateAccountViewController.swift in Sources */,
 				7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */,
 				7D4F1B75280FF50D00B579EC /* UIextension.swift in Sources */,
 				7DA938482790624700815C5D /* AppDelegate.swift in Sources */,
 				7D9297C72797FB9700697523 /* Dynamic.swift in Sources */,
 				7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */,
+				7D4F1B7928129DF100B579EC /* Users.swift in Sources */,
 				7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */,
-				7DA9385C27906AE400815C5D /* PlantsManagerViewController.swift in Sources */,
 				7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */,
 				7D7EB6942808470D0024A00A /* CreateAccountViewModel.swift in Sources */,
 				7D7EB68B2808146A0024A00A /* LoginViewController.swift in Sources */,

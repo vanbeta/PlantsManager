@@ -4,7 +4,7 @@
 //
 //  Created by Ivan Poderegin on 18.01.2022.
 //
-
+//
 import Foundation
 
 struct User {
@@ -17,4 +17,4 @@ extension User {
         User(login: "admin", password: "admin")
     ]
 }
- 
+
