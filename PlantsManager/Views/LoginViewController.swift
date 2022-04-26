@@ -22,6 +22,16 @@ class LoginViewController: UIViewController, Storybordable {
         settingsTextField(passwordTextField)
         
         createForgotPasswordButton(to: passwordTextField)
+        
+        bindError()
+    }
+    
+    func bindError() {
+        viewModelDelegate?.showError.bind { error  in
+            DispatchQueue.main.async {
+                self.showAlert(with: "Ошибка", and: error)
+            }
+        }
     }
     
     @IBAction func createAccountButtonClicked(_ sender: Any) {
@@ -29,6 +39,6 @@ class LoginViewController: UIViewController, Storybordable {
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
-        viewModelDelegate?.checkAccess(login: emailTextField.text!, password: passwordTextField.text!)
+        viewModelDelegate?.checkAccess(email: emailTextField.text!, password: passwordTextField.text!)
     }
 }

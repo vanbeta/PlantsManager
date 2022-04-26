@@ -288,6 +288,9 @@
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="baseBackgroundColor" red="0.25490196079999999" green="0.34901960780000002" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="createAccountButtonPressed:" destination="nPY-aB-t6V" eventType="touchUpInside" id="2Tx-IQ-qSY"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JxZ-x1-2sq">
                                 <rect key="frame" x="20" y="232" width="374" height="200"/>

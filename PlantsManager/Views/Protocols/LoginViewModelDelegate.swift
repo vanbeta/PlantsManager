@@ -11,5 +11,5 @@ import Foundation
 protocol LoginViewModelDelegate: AnyObject {
     
     
-    func checkAccess(login: String, password: String) -> Bool
+    func checkAccess(email: String, password: String)
 }

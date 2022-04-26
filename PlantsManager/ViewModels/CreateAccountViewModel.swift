@@ -13,7 +13,8 @@ class CreateAccountViewModel {
     
     var model: Users?
     var showAlert = Dynamic(("", ""))
-    
+    var showError = Dynamic("")
+
     func setModel(model: Users) {
         self.model = model
     }
@@ -22,8 +23,13 @@ class CreateAccountViewModel {
 extension CreateAccountViewModel: CreateAccountDelegate {
 
     
+    
     var getShowAlert: Dynamic<(String, String)> {
         return showAlert
+    }
+    
+    var getShowError: Dynamic<String> {
+        return showError
     }
                     
     func getTerms() {
@@ -33,4 +39,16 @@ extension CreateAccountViewModel: CreateAccountDelegate {
     func getConditions() {
         getShowAlert.value = ("Conditions", "And all your money!")
     }
+    
+    func createAccount(name: String, email: String, password: String) {
+        model?.addUser(name: name, email: email, password: password) { errorResult in
+            switch errorResult {
+            case .success:
+                print("created user bro")
+            case .failure(let error):
+                showError.value = error.localizedDescription
+            }
+        }
+    }
+    
 }

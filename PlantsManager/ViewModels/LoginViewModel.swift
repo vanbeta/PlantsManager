@@ -11,32 +11,44 @@ class LoginViewModel {
     
     
     var model: Users?
+    var showError = Dynamic("")
     
     func setModel(model: Users) {
         self.model = model
+    }
+    
+    func checkAccessWorker(email: String, password: String, onResult: (ErrorResult) -> Void ) {
+        guard let model = model else { return }
+        
+        guard !email.isEmpty    else { onResult(ErrorResult.failure(UserError.emptyEmail))    ; return }
+        guard !password.isEmpty else { onResult(ErrorResult.failure(UserError.emptyPassword)) ; return }
+        
+        guard model.logins.contains(where: { $0.email == email }) else {
+            onResult(ErrorResult.failure(UserError.notFoundEmail))
+            return
+        }
+        guard model.logins.first(where: {$0.password == password }) != nil else{
+            onResult(ErrorResult.failure(UserError.notFoundPassword))
+            return
+        }
+        
+        onResult(ErrorResult.success)
     }
 }
 
 extension LoginViewModel: LoginViewModelDelegate {
     
     
-    func checkAccess(login: String, password: String) -> Bool {
-        guard let model = model else {
-            print("no model")
-            return false
-        }
-        
-        if model.logins.contains(where: { $0.login == login }) {
-            if model.logins.first(where: {$0.password == password }) != nil {
-                print("password is correct")
-            } else {
-                print("password is wrong")
+    func checkAccess(email: String, password: String) {
+        checkAccessWorker(email: email, password: password) { errorResult in
+            switch errorResult {
+            case .success:
+                print("bingo bro")
+            case .failure(let error):
+                showError.value = error.localizedDescription
             }
-        } else {
-            print("login not found")
         }
-
-        return true
     }
+    
 }
 

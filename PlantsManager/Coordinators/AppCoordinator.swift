@@ -30,7 +30,7 @@ class AppCoordinator: Coordinator {
     }
     
     func showLogin() {
-        model.logins.append(User(login: "admin", password: "admin"))
+        model.logins.append(User(name: "ivan", email: "admin", password: "admin"))
 
         let vc = LoginViewController.createObject()
         vc.coordinator = self

@@ -30,12 +30,21 @@ class CreateAccountViewController: UIViewController, Storybordable {
         createForgotPasswordButton(to: passwordTextField)
         
         bindAlert()
+        bindError()
     }
     
     func bindAlert() {
         viewModelDelegate?.getShowAlert.bind { (titleText, text)  in
             DispatchQueue.main.async {
                 self.showAlert(with: titleText, and: text)
+            }
+        }
+    }
+    
+    func bindError() {
+        viewModelDelegate?.getShowError.bind { error  in
+            DispatchQueue.main.async {
+                self.showAlert(with: "Ошибка", and: error)
             }
         }
     }
@@ -55,4 +64,11 @@ class CreateAccountViewController: UIViewController, Storybordable {
     @IBAction func conditionsButtonPressed(_ sender: Any) {
         viewModelDelegate?.getConditions()
     }
+    
+    @IBAction func createAccountButtonPressed(_ sender: Any) {
+        viewModelDelegate?.createAccount(name:     nameTextField.text!,
+                                         email:    emailTextField.text!,
+                                         password: passwordTextField.text!)
+    }
+    
 }
