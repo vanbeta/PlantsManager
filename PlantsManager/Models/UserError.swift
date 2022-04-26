@@ -30,15 +30,15 @@ extension UserError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .emptyEmail:
-            return NSLocalizedString("Заполните поле email", comment: "")
+            return NSLocalizedString("Field email is empty", comment: "")
         case .emptyPassword:
-            return NSLocalizedString("Заполните поле password", comment: "")
+            return NSLocalizedString("Field password is empty", comment: "")
         case .emptyName:
-            return NSLocalizedString("Заполните поле name", comment: "")
+            return NSLocalizedString("Field name is empty", comment: "")
         case .notFoundEmail:
-            return NSLocalizedString("email не найден", comment: "")
+            return NSLocalizedString("email not found", comment: "")
         case .notFoundPassword:
-            return NSLocalizedString("Неправильный пароль", comment: "")
+            return NSLocalizedString("Wrong password", comment: "")
         }
     }
 }

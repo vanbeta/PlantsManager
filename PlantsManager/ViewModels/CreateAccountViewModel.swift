@@ -40,7 +40,12 @@ extension CreateAccountViewModel: CreateAccountDelegate {
         getShowAlert.value = ("Conditions", "And all your money!")
     }
     
-    func createAccount(name: String, email: String, password: String) {
+    func createAccount(name: String, email: String, password: String, checkBoxTerm: UIControl.State) {
+        guard checkBoxTerm == .selected else {
+            showError.value = "Accept terms and conditions"
+            return
+        }
+        
         model?.addUser(name: name, email: email, password: password) { errorResult in
             switch errorResult {
             case .success:
