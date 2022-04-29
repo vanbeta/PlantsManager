@@ -27,6 +27,8 @@
 		7DA938542790624A00815C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA938522790624A00815C5D /* LaunchScreen.storyboard */; };
 		7DFB40E92816C89F00D0FEE3 /* LoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40E82816C89F00D0FEE3 /* LoginViewModelDelegate.swift */; };
 		7DFB40EB2817D43800D0FEE3 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40EA2817D43800D0FEE3 /* UserError.swift */; };
+		7DFB40ED281A59EA00D0FEE3 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40EC281A59EA00D0FEE3 /* MainScreenViewController.swift */; };
+		7DFB40EF281BC85A00D0FEE3 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		7DA938552790624A00815C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DFB40E82816C89F00D0FEE3 /* LoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelDelegate.swift; sourceTree = "<group>"; };
 		7DFB40EA2817D43800D0FEE3 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		7DFB40EC281A59EA00D0FEE3 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				7D7EB6882807E7830024A00A /* WelcomeViewController.swift */,
 				7D7EB68A2808146A0024A00A /* LoginViewController.swift */,
 				7D7EB68C280814820024A00A /* CreateAccountViewController.swift */,
+				7DFB40EC281A59EA00D0FEE3 /* MainScreenViewController.swift */,
+				7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,10 +264,12 @@
 				7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */,
 				7DFB40EB2817D43800D0FEE3 /* UserError.swift in Sources */,
 				7D4F1B75280FF50D00B579EC /* UIextension.swift in Sources */,
+				7DFB40ED281A59EA00D0FEE3 /* MainScreenViewController.swift in Sources */,
 				7DA938482790624700815C5D /* AppDelegate.swift in Sources */,
 				7DFB40E92816C89F00D0FEE3 /* LoginViewModelDelegate.swift in Sources */,
 				7D9297C72797FB9700697523 /* Dynamic.swift in Sources */,
 				7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */,
+				7DFB40EF281BC85A00D0FEE3 /* MainTableViewCell.swift in Sources */,
 				7D4F1B7928129DF100B579EC /* Users.swift in Sources */,
 				7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */,
 				7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */,
