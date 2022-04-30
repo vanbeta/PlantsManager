@@ -22,7 +22,24 @@ class MainScreenViewController: UIViewController, Storybordable {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
         self.title = "My plants"
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        self.navigationItem.searchController = search
+        
+        let btnAdd = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(btnAddClicked))
+        navigationItem.rightBarButtonItem = btnAdd
+    }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let swipeDel = UIContextualAction(style: .normal, title: "Delete") { action, view, success in
+            // реализовать удаление
+        }
+        swipeDel.backgroundColor = UIColor.red
+        return UISwipeActionsConfiguration(actions: [swipeDel])
+    }
+    
+    @objc func btnAddClicked() {
+        // реализавать 
     }
 }
 
@@ -42,6 +59,14 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("her")
+        // реализовать клик на ячейку
+    }
+}
+
+extension MainScreenViewController: UISearchResultsUpdating {
+    
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        // реализовать поиск
     }
 }
