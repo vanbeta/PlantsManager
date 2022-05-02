@@ -31,7 +31,6 @@ class AppCoordinator: Coordinator {
         
         let vc = MainScreenViewController.createObject()
         navigationController.pushViewController(vc, animated: true)
-        navigationController.navigationBar
     }
     
     func showLogin() {

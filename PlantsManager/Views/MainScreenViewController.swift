@@ -28,14 +28,19 @@ class MainScreenViewController: UIViewController, Storybordable {
         
         let btnAdd = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(btnAddClicked))
         navigationItem.rightBarButtonItem = btnAdd
-    }
+}
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let swipeDel = UIContextualAction(style: .normal, title: "Delete") { action, view, success in
+        let swipeDel = UIContextualAction(style: .normal, title: "") { action, view, success in
             // реализовать удаление
         }
-        swipeDel.backgroundColor = UIColor.red
-        return UISwipeActionsConfiguration(actions: [swipeDel])
+        swipeDel.backgroundColor = UIColor.white
+        swipeDel.image = UIImage(named: "remove")
+ 
+        let swipeAction = UISwipeActionsConfiguration(actions: [swipeDel])
+        swipeAction.performsFirstActionWithFullSwipe = false
+        
+        return swipeAction
     }
     
     @objc func btnAddClicked() {
@@ -52,14 +57,18 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! MainTableViewCell
-        cell.plantName.text = "heromantia"
+        cell.plantName.text = "Bunny Boom Orhidec"
         cell.plantImage?.image = UIImage(named: "flower")
-        
+        cell.waterImage?.image = UIImage(named: "leica")
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // реализовать клик на ячейку
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 135
     }
 }
 
