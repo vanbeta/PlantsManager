@@ -11,7 +11,7 @@ class WelcomeViewController: UIViewController, Storybordable {
     
     
     var coordinator: AppCoordinator?
-    var viewModel: WelcomViewModel?
+    var viewModel: WelcomViewModel? //!!! от дилигата
         
     override func viewDidLoad() {
         super.viewDidLoad()

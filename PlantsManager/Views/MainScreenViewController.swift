@@ -10,6 +10,9 @@ import UIKit
 class MainScreenViewController: UIViewController, Storybordable {
     
     
+    weak var coordinator: AppCoordinator?
+    var viewModelDelegate: MainScreenDelegate?
+    
     let idCell = "mainCell"
     
     @IBOutlet var tableView: UITableView!
@@ -44,7 +47,7 @@ class MainScreenViewController: UIViewController, Storybordable {
     }
     
     @objc func btnAddClicked() {
-        // реализавать 
+        coordinator?.showAddPlant()
     }
 }
 

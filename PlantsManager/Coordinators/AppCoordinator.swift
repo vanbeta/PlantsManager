@@ -30,6 +30,9 @@ class AppCoordinator: Coordinator {
 //        navigationController.pushViewController(vc, animated: true)
         
         let vc = MainScreenViewController.createObject()
+        vc.coordinator = self
+        let viewModel = MainScreenViewModel()
+        vc.viewModelDelegate = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -52,6 +55,14 @@ class AppCoordinator: Coordinator {
         viewModel.setModel(model: model)
         vc.viewModelDelegate = viewModel
         navigationController.viewControllers.removeAll()
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showAddPlant() {
+        let vc = AddPlantViewController.createObject()
+        vc.coordinator = self
+        let viewModel = AddPlantViewModel()
+        vc.viewModelDelegate = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
 }

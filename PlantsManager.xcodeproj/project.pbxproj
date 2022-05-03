@@ -29,6 +29,11 @@
 		7DFB40EB2817D43800D0FEE3 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40EA2817D43800D0FEE3 /* UserError.swift */; };
 		7DFB40ED281A59EA00D0FEE3 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40EC281A59EA00D0FEE3 /* MainScreenViewController.swift */; };
 		7DFB40EF281BC85A00D0FEE3 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */; };
+		7DFB40F1282103DE00D0FEE3 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40F0282103DE00D0FEE3 /* AddPlantViewController.swift */; };
+		7DFB40F32821043600D0FEE3 /* AddPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40F22821043600D0FEE3 /* AddPlantViewModel.swift */; };
+		7DFB40F72821520D00D0FEE3 /* AddPlantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */; };
+		7DFB40F9282153A000D0FEE3 /* MainScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */; };
+		7DFB40FC282153C700D0FEE3 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		7DFB40EA2817D43800D0FEE3 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		7DFB40EC281A59EA00D0FEE3 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		7DFB40F0282103DE00D0FEE3 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
+		7DFB40F22821043600D0FEE3 /* AddPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewModel.swift; sourceTree = "<group>"; };
+		7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantDelegate.swift; sourceTree = "<group>"; };
+		7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenDelegate.swift; sourceTree = "<group>"; };
+		7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,8 @@
 				7D7EB6862807E4610024A00A /* Strorybordable.swift */,
 				7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */,
 				7DFB40E82816C89F00D0FEE3 /* LoginViewModelDelegate.swift */,
+				7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */,
+				7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -124,6 +136,7 @@
 				7D7EB68C280814820024A00A /* CreateAccountViewController.swift */,
 				7DFB40EC281A59EA00D0FEE3 /* MainScreenViewController.swift */,
 				7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */,
+				7DFB40F0282103DE00D0FEE3 /* AddPlantViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,6 +148,8 @@
 				7D7EB68E280846E60024A00A /* WelcomViewModel.swift */,
 				7D7EB690280846F30024A00A /* LoginViewModel.swift */,
 				7D7EB6932808470D0024A00A /* CreateAccountViewModel.swift */,
+				7DFB40F22821043600D0FEE3 /* AddPlantViewModel.swift */,
+				7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -260,6 +275,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7EB6892807E7830024A00A /* WelcomeViewController.swift in Sources */,
+				7DFB40F9282153A000D0FEE3 /* MainScreenDelegate.swift in Sources */,
+				7DFB40FC282153C700D0FEE3 /* MainScreenViewModel.swift in Sources */,
 				7D7EB68D280814820024A00A /* CreateAccountViewController.swift in Sources */,
 				7D7EB6822807E2A10024A00A /* Coordinator.swift in Sources */,
 				7DFB40EB2817D43800D0FEE3 /* UserError.swift in Sources */,
@@ -267,12 +284,15 @@
 				7DFB40ED281A59EA00D0FEE3 /* MainScreenViewController.swift in Sources */,
 				7DA938482790624700815C5D /* AppDelegate.swift in Sources */,
 				7DFB40E92816C89F00D0FEE3 /* LoginViewModelDelegate.swift in Sources */,
+				7DFB40F1282103DE00D0FEE3 /* AddPlantViewController.swift in Sources */,
 				7D9297C72797FB9700697523 /* Dynamic.swift in Sources */,
 				7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */,
 				7DFB40EF281BC85A00D0FEE3 /* MainTableViewCell.swift in Sources */,
 				7D4F1B7928129DF100B579EC /* Users.swift in Sources */,
 				7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */,
+				7DFB40F32821043600D0FEE3 /* AddPlantViewModel.swift in Sources */,
 				7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */,
+				7DFB40F72821520D00D0FEE3 /* AddPlantDelegate.swift in Sources */,
 				7D7EB6942808470D0024A00A /* CreateAccountViewModel.swift in Sources */,
 				7D7EB68B2808146A0024A00A /* LoginViewController.swift in Sources */,
 				7D7EB6842807E3560024A00A /* AppCoordinator.swift in Sources */,
