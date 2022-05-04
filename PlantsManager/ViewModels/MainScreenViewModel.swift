@@ -11,7 +11,11 @@ import Foundation
 class MainScreenViewModel {
     
     
+    var model: [Plant]?
     
+    func setModel(model: [Plant]) {
+        self.model = model
+    }
 }
 
 extension MainScreenViewModel: MainScreenDelegate {

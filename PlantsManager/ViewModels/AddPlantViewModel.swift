@@ -11,6 +11,11 @@ import Foundation
 class AddPlantViewModel {
     
     
+//    var model: PlantsDataManager?
+//    
+//    func setModel(model: PlantsDataManager) {
+//        self.model = model
+//    }
 }
 
 extension AddPlantViewModel: AddPlantDelegate {

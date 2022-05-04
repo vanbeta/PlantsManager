@@ -34,6 +34,7 @@
 		7DFB40F72821520D00D0FEE3 /* AddPlantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */; };
 		7DFB40F9282153A000D0FEE3 /* MainScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */; };
 		7DFB40FC282153C700D0FEE3 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */; };
+		7DFB40FE282181BF00D0FEE3 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FD282181BF00D0FEE3 /* Plants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantDelegate.swift; sourceTree = "<group>"; };
 		7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenDelegate.swift; sourceTree = "<group>"; };
 		7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		7DFB40FD282181BF00D0FEE3 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +110,10 @@
 			isa = PBXGroup;
 			children = (
 				7D7EB6862807E4610024A00A /* Strorybordable.swift */,
-				7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */,
 				7DFB40E82816C89F00D0FEE3 /* LoginViewModelDelegate.swift */,
-				7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */,
+				7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */,
 				7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */,
+				7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -121,6 +123,7 @@
 			children = (
 				7D4F1B7828129DF100B579EC /* Users.swift */,
 				7DFB40EA2817D43800D0FEE3 /* UserError.swift */,
+				7DFB40FD282181BF00D0FEE3 /* Plants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,8 +138,8 @@
 				7D7EB68A2808146A0024A00A /* LoginViewController.swift */,
 				7D7EB68C280814820024A00A /* CreateAccountViewController.swift */,
 				7DFB40EC281A59EA00D0FEE3 /* MainScreenViewController.swift */,
-				7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */,
 				7DFB40F0282103DE00D0FEE3 /* AddPlantViewController.swift */,
+				7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,8 +151,8 @@
 				7D7EB68E280846E60024A00A /* WelcomViewModel.swift */,
 				7D7EB690280846F30024A00A /* LoginViewModel.swift */,
 				7D7EB6932808470D0024A00A /* CreateAccountViewModel.swift */,
-				7DFB40F22821043600D0FEE3 /* AddPlantViewModel.swift */,
 				7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */,
+				7DFB40F22821043600D0FEE3 /* AddPlantViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				7D4F1B7928129DF100B579EC /* Users.swift in Sources */,
 				7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */,
 				7DFB40F32821043600D0FEE3 /* AddPlantViewModel.swift in Sources */,
+				7DFB40FE282181BF00D0FEE3 /* Plants.swift in Sources */,
 				7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */,
 				7DFB40F72821520D00D0FEE3 /* AddPlantDelegate.swift in Sources */,
 				7D7EB6942808470D0024A00A /* CreateAccountViewModel.swift in Sources */,
