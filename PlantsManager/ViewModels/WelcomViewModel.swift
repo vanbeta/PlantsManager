@@ -9,4 +9,18 @@ import Foundation
 
 class WelcomViewModel {
     
+    
+    var coordinator: AppCoordinator?
+}
+
+extension WelcomViewModel: WelcomViewModelDelegate {
+    
+    
+    func btnLoginWasPressed() {
+        coordinator?.showLogin()
+    }
+    
+    func btnCreateAccountWasPressed() {
+        coordinator?.showCreateAccount()
+    }
 }

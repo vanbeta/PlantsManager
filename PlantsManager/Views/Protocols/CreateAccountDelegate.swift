@@ -13,6 +13,7 @@ protocol CreateAccountDelegate: AnyObject {
     
     var getShowAlert: Dynamic<(String, String)> { get }
     var getShowError: Dynamic<String> { get }
+    func btnSignInWasPressed()
     func getTerms()
     func getConditions()
     func createAccount(name: String, email: String, password: String, checkBoxTerm: UIControl.State)

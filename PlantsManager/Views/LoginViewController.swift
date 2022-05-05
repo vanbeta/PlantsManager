@@ -13,8 +13,7 @@ class LoginViewController: UIViewController, Storybordable {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    weak var coordinator: AppCoordinator?
-    var viewModelDelegate: LoginViewModel?
+    var viewModel: LoginViewModelDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,7 @@ class LoginViewController: UIViewController, Storybordable {
     }
     
     func bindError() {
-        viewModelDelegate?.showError.bind { error  in
+        viewModel?.getShowError.bind { error  in
             DispatchQueue.main.async {
                 self.showAlert(with: "Ошибка", and: error)
             }
@@ -35,10 +34,10 @@ class LoginViewController: UIViewController, Storybordable {
     }
     
     @IBAction func createAccountButtonClicked(_ sender: Any) {
-        coordinator?.showCreateAccount()
+        viewModel?.btnCreareAccountWasPressed()
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
-        viewModelDelegate?.checkAccess(email: emailTextField.text!, password: passwordTextField.text!)
+        viewModel?.checkAccess(email: emailTextField.text!, password: passwordTextField.text!)
     }
 }

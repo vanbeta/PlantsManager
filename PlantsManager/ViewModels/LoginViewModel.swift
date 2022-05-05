@@ -10,6 +10,7 @@ import Foundation
 class LoginViewModel {
     
     
+    weak var coordinator: AppCoordinator?
     var model: Users?
     var showError = Dynamic("")
     
@@ -39,6 +40,8 @@ class LoginViewModel {
 extension LoginViewModel: LoginViewModelDelegate {
     
     
+    var getShowError: Dynamic<String> { showError }
+    
     func checkAccess(email: String, password: String) {
         checkAccessWorker(email: email, password: password) { errorResult in
             switch errorResult {
@@ -50,5 +53,8 @@ extension LoginViewModel: LoginViewModelDelegate {
         }
     }
     
+    func btnCreareAccountWasPressed() {
+        coordinator?.showCreateAccount()
+    }
 }
 

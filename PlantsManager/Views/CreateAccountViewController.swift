@@ -14,8 +14,7 @@ class CreateAccountViewController: UIViewController, Storybordable {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var checkBox: UIButton!
     
-    weak var coordinator: AppCoordinator?
-    var viewModelDelegate: CreateAccountDelegate?
+    var viewModel: CreateAccountDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +33,7 @@ class CreateAccountViewController: UIViewController, Storybordable {
     }
     
     func bindAlert() {
-        viewModelDelegate?.getShowAlert.bind { (titleText, text)  in
+        viewModel?.getShowAlert.bind { (titleText, text)  in
             DispatchQueue.main.async {
                 self.showAlert(with: titleText, and: text)
             }
@@ -42,7 +41,7 @@ class CreateAccountViewController: UIViewController, Storybordable {
     }
     
     func bindError() {
-        viewModelDelegate?.getShowError.bind { error  in
+        viewModel?.getShowError.bind { error  in
             DispatchQueue.main.async {
                 self.showAlert(with: "Ошибка", and: error)
             }
@@ -54,19 +53,19 @@ class CreateAccountViewController: UIViewController, Storybordable {
     }
     
     @IBAction func signInButtonPressed(_ sender: Any) {
-        coordinator?.showLogin()
+        viewModel?.btnSignInWasPressed()
     }
     
     @IBAction func termsButtonPressed(_ sender: Any) {
-        viewModelDelegate?.getTerms()
+        viewModel?.getTerms()
     }
     
     @IBAction func conditionsButtonPressed(_ sender: Any) {
-        viewModelDelegate?.getConditions()
+        viewModel?.getConditions()
     }
     
     @IBAction func createAccountButtonPressed(_ sender: Any) {
-        viewModelDelegate?.createAccount(name:     nameTextField.text!,
+        viewModel?.createAccount(name:     nameTextField.text!,
                                          email:    emailTextField.text!,
                                          password: passwordTextField.text!,
                                          checkBoxTerm: checkBox.state)

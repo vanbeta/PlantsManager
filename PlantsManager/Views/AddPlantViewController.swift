@@ -11,7 +11,7 @@ class AddPlantViewController: UIViewController, Storybordable {
     
     
     var coordinator: AppCoordinator?
-    var viewModelDelegate: AddPlantDelegate?
+    var viewModel: AddPlantDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

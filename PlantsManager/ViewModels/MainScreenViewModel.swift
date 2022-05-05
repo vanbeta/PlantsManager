@@ -10,7 +10,7 @@ import Foundation
 
 class MainScreenViewModel {
     
-    
+    weak var coordinator: AppCoordinator?
     var model: [Plant]?
     
     func setModel(model: [Plant]) {
@@ -21,5 +21,7 @@ class MainScreenViewModel {
 extension MainScreenViewModel: MainScreenDelegate {
     
     
-    
+    func btnAddWasPressed() {
+        coordinator?.showAddPlant()
+    }
 }

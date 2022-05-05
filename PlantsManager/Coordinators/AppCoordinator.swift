@@ -25,41 +25,42 @@ class AppCoordinator: Coordinator {
     }
     
     func showWelcom() {
-//        let vc = WelcomeViewController.createObject()
-//        vc.coordinator = self
-//        vc.viewModel = WelcomViewModel()
-//        navigationController.pushViewController(vc, animated: true)
-        showMainScreen()
+        let vc = WelcomeViewController.createObject()
+        let viewModel = WelcomViewModel()
+        viewModel.coordinator = self
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+//        showMainScreen()
     }
     
     func showLogin() {
         model.logins.append(User(name: "ivan", email: "admin", password: "admin"))
 
         let vc = LoginViewController.createObject()
-        vc.coordinator = self
         let viewModel = LoginViewModel()
+        viewModel.coordinator = self
         viewModel.setModel(model: model)
-        vc.viewModelDelegate = viewModel
+        vc.viewModel = viewModel
         navigationController.viewControllers.removeAll()
         navigationController.pushViewController(vc, animated: true)
     }
     
     func showCreateAccount() {
         let vc = CreateAccountViewController.createObject()
-        vc.coordinator = self
         let viewModel = CreateAccountViewModel()
+        viewModel.coordinator = self
         viewModel.setModel(model: model)
-        vc.viewModelDelegate = viewModel
+        vc.viewModel = viewModel
         navigationController.viewControllers.removeAll()
         navigationController.pushViewController(vc, animated: true)
     }
     
     func showMainScreen() {
         let vc = MainScreenViewController.createObject()
-        vc.coordinator = self
         let viewModel = MainScreenViewModel()
+        viewModel.coordinator = self
         viewModel.setModel(model: plants)
-        vc.viewModelDelegate = viewModel
+        vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -67,7 +68,7 @@ class AppCoordinator: Coordinator {
         let vc = AddPlantViewController.createObject()
         vc.coordinator = self
         let viewModel = AddPlantViewModel()
-        vc.viewModelDelegate = viewModel
+        vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
 }

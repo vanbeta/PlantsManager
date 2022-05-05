@@ -10,18 +10,17 @@ import UIKit
 class WelcomeViewController: UIViewController, Storybordable {
     
     
-    var coordinator: AppCoordinator?
-    var viewModel: WelcomViewModel? //!!! от дилигата
+    var viewModel: WelcomViewModelDelegate?
         
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        coordinator?.showLogin()
+        viewModel?.btnLoginWasPressed()
     }
     
     @IBAction func createAccountButtonClicced(_ sender: Any) {
-        coordinator?.showCreateAccount()
+        viewModel?.btnCreateAccountWasPressed()
     }
 }

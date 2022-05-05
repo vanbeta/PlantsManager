@@ -7,9 +7,10 @@
 
 import Foundation
 
-
 protocol LoginViewModelDelegate: AnyObject {
     
     
+    var getShowError: Dynamic<String> { get }
     func checkAccess(email: String, password: String)
+    func btnCreareAccountWasPressed()
 }

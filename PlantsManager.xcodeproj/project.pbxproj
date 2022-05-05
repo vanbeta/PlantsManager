@@ -35,6 +35,7 @@
 		7DFB40F9282153A000D0FEE3 /* MainScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */; };
 		7DFB40FC282153C700D0FEE3 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */; };
 		7DFB40FE282181BF00D0FEE3 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FD282181BF00D0FEE3 /* Plants.swift */; };
+		7DFB410028238B1000D0FEE3 /* WelcomViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FF28238B1000D0FEE3 /* WelcomViewModelDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenDelegate.swift; sourceTree = "<group>"; };
 		7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		7DFB40FD282181BF00D0FEE3 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
+		7DFB40FF28238B1000D0FEE3 /* WelcomViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewModelDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */,
 				7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */,
 				7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */,
+				7DFB40FF28238B1000D0FEE3 /* WelcomViewModelDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				7DFB40ED281A59EA00D0FEE3 /* MainScreenViewController.swift in Sources */,
 				7DA938482790624700815C5D /* AppDelegate.swift in Sources */,
 				7DFB40E92816C89F00D0FEE3 /* LoginViewModelDelegate.swift in Sources */,
+				7DFB410028238B1000D0FEE3 /* WelcomViewModelDelegate.swift in Sources */,
 				7DFB40F1282103DE00D0FEE3 /* AddPlantViewController.swift in Sources */,
 				7D9297C72797FB9700697523 /* Dynamic.swift in Sources */,
 				7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */,

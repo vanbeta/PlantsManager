@@ -11,6 +11,7 @@ import UIKit
 class CreateAccountViewModel {
 
     
+    weak var coordinator: AppCoordinator?
     var model: Users?
     var showAlert = Dynamic(("", ""))
     var showError = Dynamic("")
@@ -24,12 +25,12 @@ extension CreateAccountViewModel: CreateAccountDelegate {
 
     
     
-    var getShowAlert: Dynamic<(String, String)> {
-        return showAlert
-    }
+    var getShowAlert: Dynamic<(String, String)> { showAlert }
     
-    var getShowError: Dynamic<String> {
-        return showError
+    var getShowError: Dynamic<String> { showError }
+    
+    func btnSignInWasPressed() {
+        coordinator?.showLogin()
     }
                     
     func getTerms() {
@@ -55,5 +56,4 @@ extension CreateAccountViewModel: CreateAccountDelegate {
             }
         }
     }
-    
 }

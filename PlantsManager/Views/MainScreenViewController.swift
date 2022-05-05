@@ -10,8 +10,8 @@ import UIKit
 class MainScreenViewController: UIViewController, Storybordable {
     
     
-    weak var coordinator: AppCoordinator?
-    var viewModelDelegate: MainScreenDelegate?
+    var viewModel: MainScreenDelegate?
+    private var plants: [Plant] = [] // !!!
     
     let idCell = "mainCell"
     
@@ -47,7 +47,7 @@ class MainScreenViewController: UIViewController, Storybordable {
     }
     
     @objc func btnAddClicked() {
-        coordinator?.showAddPlant()
+        viewModel?.btnAddWasPressed()
     }
 }
 
@@ -55,7 +55,7 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return plants.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
