@@ -42,6 +42,19 @@ class MainTableViewCell: UITableViewCell {
         contentView.layer.masksToBounds = true
         self.selectionStyle = .none
     }
+    
+    func configure(with plant: Plant, cellIndex: Int) {
+
+//        var content = defaultContentConfiguration()
+//
+//        content.text = plant.name
+//        contentConfiguration = content
+        self.plantName.text = plant.name
+        
+        self.plantImage?.image = UIImage(named: "flower")
+        self.waterImage?.image = UIImage(named: "leica")
+    }
+    
 }
 
 

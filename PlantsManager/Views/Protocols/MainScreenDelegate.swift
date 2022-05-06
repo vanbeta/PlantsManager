@@ -10,6 +10,8 @@ import Foundation
 
 protocol MainScreenDelegate: AnyObject {
     
-    
+
+    var getPlants: Dynamic<[Plant]> { get }
+    func updateModel()
     func btnAddWasPressed()
 }

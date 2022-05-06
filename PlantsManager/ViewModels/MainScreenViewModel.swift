@@ -11,16 +11,24 @@ import Foundation
 class MainScreenViewModel {
     
     weak var coordinator: AppCoordinator?
-    var model: [Plant]?
+    var model: Dynamic<[Plant]> = Dynamic([])
+    var tempModel: [Plant]?
+    
     
     func setModel(model: [Plant]) {
-        self.model = model
+        self.tempModel = model
     }
 }
 
 extension MainScreenViewModel: MainScreenDelegate {
     
     
+    var getPlants: Dynamic<[Plant]> { model }
+    
+    func updateModel() {
+        self.model.value = self.tempModel!
+    }
+
     func btnAddWasPressed() {
         coordinator?.showAddPlant()
     }

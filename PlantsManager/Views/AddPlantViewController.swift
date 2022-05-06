@@ -18,6 +18,6 @@ class AddPlantViewController: UIViewController, Storybordable {
     }
     
     @IBAction func btnAddPressed(_ sender: Any) {
-        
+        viewModel?.btnAddWasPressed()
     }
 }
