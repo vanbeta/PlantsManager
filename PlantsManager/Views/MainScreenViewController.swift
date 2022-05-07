@@ -35,13 +35,11 @@ class MainScreenViewController: UIViewController, Storybordable {
         navigationItem.rightBarButtonItem = btnAdd
                 
         bindPlants()
-        viewModel?.updateModel()
     }
     
     func bindPlants() {
         viewModel?.getPlants.bind { value in
             DispatchQueue.main.async {
-                print(value[0])
                 self.plants = value
                 self.tableView.reloadData()
             }
@@ -70,7 +68,6 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(plants.count)
         return plants.count
     }
     

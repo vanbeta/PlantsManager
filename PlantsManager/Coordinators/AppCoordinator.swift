@@ -58,8 +58,8 @@ class AppCoordinator: Coordinator {
     func showMainScreen() {
         let vc = MainScreenViewController.createObject()
         let viewModel = MainScreenViewModel()
-        viewModel.coordinator = self
         viewModel.setModel(model: plants)
+        viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
