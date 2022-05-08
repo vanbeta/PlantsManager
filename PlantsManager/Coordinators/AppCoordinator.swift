@@ -16,8 +16,8 @@ class AppCoordinator: Coordinator {
         
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        model = Users()
-        plants = PlantsDataManager.shared.fetchPlants()
+        self.model = Users()
+        self.plants = PlantsDataManager.shared.fetchPlants()
     }
     
     func start() {
@@ -25,12 +25,12 @@ class AppCoordinator: Coordinator {
     }
     
     func showWelcom() {
-//        let vc = WelcomeViewController.createObject()
-//        let viewModel = WelcomViewModel()
-//        viewModel.coordinator = self
-//        vc.viewModel = viewModel
-//        navigationController.pushViewController(vc, animated: true)
-        showMainScreen()
+        let vc = WelcomeViewController.createObject()
+        let viewModel = WelcomViewModel()
+        viewModel.coordinator = self
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+//        showMainScreen()
     }
     
     func showLogin() {

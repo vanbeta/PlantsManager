@@ -44,17 +44,11 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func configure(with plant: Plant, cellIndex: Int) {
-
-//        var content = defaultContentConfiguration()
-//
-//        content.text = plant.name
-//        contentConfiguration = content
         self.plantName.text = plant.name
-        
         self.plantImage?.image = UIImage(named: "flower")
         self.waterImage?.image = UIImage(named: "leica")
+        self.waterLabel?.text = String(plant.waterVolume)
     }
-    
 }
 
 

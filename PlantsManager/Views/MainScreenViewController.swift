@@ -47,8 +47,15 @@ class MainScreenViewController: UIViewController, Storybordable {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let swipeDel = UIContextualAction(style: .normal, title: "") { action, view, success in
-            // реализовать удаление
+        let swipeDel = UIContextualAction(style: .normal, title: "") { [self] action, view, success in
+            showRemoveAlert(with: "", and: "Would you like to delete this plant", { [self] Ok in
+                if Ok {
+                    viewModel?.removePlant(index: indexPath.item)
+                    success(true)
+                } else {
+                    success(false)
+                }
+            })
         }
         swipeDel.backgroundColor = UIColor.white
         swipeDel.image = UIImage(named: "remove")
@@ -78,15 +85,10 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! MainTableViewCell
         
-//        let plant = plants[indexPath.row]
-//        cell.configure(with: plant, cellIndex: indexPath.row)
+        let plant = plants[indexPath.row]
+        cell.configure(with: plant, cellIndex: indexPath.row)
 
-        cell.plantName.text = "plant.name"
-
-        cell.plantImage?.image = UIImage(named: "flower")
-        cell.waterImage?.image = UIImage(named: "leica")
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
