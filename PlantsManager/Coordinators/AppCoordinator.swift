@@ -25,12 +25,12 @@ class AppCoordinator: Coordinator {
     }
     
     func showWelcom() {
-        let vc = WelcomeViewController.createObject()
-        let viewModel = WelcomViewModel()
-        viewModel.coordinator = self
-        vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: true)
-//        showMainScreen()
+//        let vc = WelcomeViewController.createObject()
+//        let viewModel = WelcomViewModel()
+//        viewModel.coordinator = self
+//        vc.viewModel = viewModel
+//        navigationController.pushViewController(vc, animated: true)
+        showMainScreen()
     }
     
     func showLogin() {

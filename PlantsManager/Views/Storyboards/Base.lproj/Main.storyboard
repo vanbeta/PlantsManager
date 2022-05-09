@@ -489,17 +489,31 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 200 ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51Z-rZ-Mjp">
                                                             <rect key="frame" x="28" y="0.0" width="48.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" systemColor="systemGray2Color"/>
+                                                            <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPi-ap-xU1">
+                                                    <rect key="frame" x="297" y="32.5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="ujc-fY-OhT"/>
+                                                        <constraint firstAttribute="width" constant="50" id="vjY-ux-aak"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title=""/>
+                                                    <connections>
+                                                        <action selector="btnCheckMarkPressed:" destination="5vO-7X-xCB" eventType="touchUpInside" id="73F-dU-YBU"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="CUC-wH-nML" firstAttribute="top" secondItem="0qm-5R-iNr" secondAttribute="bottom" constant="10" id="1tk-vw-dVL"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cvg-yc-8lj" secondAttribute="bottom" constant="12" id="2Kl-7s-vok"/>
                                                 <constraint firstItem="0qm-5R-iNr" firstAttribute="top" secondItem="Tyw-2G-gWA" secondAttribute="topMargin" constant="12" id="9hZ-EO-QeE"/>
+                                                <constraint firstItem="dPi-ap-xU1" firstAttribute="centerY" secondItem="Tyw-2G-gWA" secondAttribute="centerY" id="DNp-46-TmS"/>
                                                 <constraint firstItem="cvg-yc-8lj" firstAttribute="centerY" secondItem="Tyw-2G-gWA" secondAttribute="centerY" id="GPY-tO-6S6"/>
+                                                <constraint firstItem="dPi-ap-xU1" firstAttribute="trailing" secondItem="Tyw-2G-gWA" secondAttribute="trailingMargin" constant="-7" id="KD7-jL-anz"/>
                                                 <constraint firstItem="cvg-yc-8lj" firstAttribute="top" secondItem="Tyw-2G-gWA" secondAttribute="topMargin" constant="12" id="VQk-mD-1je"/>
                                                 <constraint firstItem="CUC-wH-nML" firstAttribute="leading" secondItem="cvg-yc-8lj" secondAttribute="trailing" constant="27" id="ZvJ-o2-fSX"/>
                                                 <constraint firstItem="0qm-5R-iNr" firstAttribute="leading" secondItem="cvg-yc-8lj" secondAttribute="trailing" constant="24" id="cbd-Qr-xVR"/>
@@ -507,6 +521,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnCheckMark" destination="dPi-ap-xU1" id="maF-Mo-n3V"/>
                                             <outlet property="plantImage" destination="cvg-yc-8lj" id="bQ1-Iw-36Z"/>
                                             <outlet property="plantName" destination="0qm-5R-iNr" id="afT-kF-hcG"/>
                                             <outlet property="waterImage" destination="ZdO-3q-Pl0" id="0SP-gR-xtv"/>
@@ -566,9 +581,6 @@
         <image name="flower" width="53" height="69"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -65,10 +65,10 @@ class CreateAccountViewController: UIViewController, Storybordable {
     }
     
     @IBAction func createAccountButtonPressed(_ sender: Any) {
-        viewModel?.createAccount(name:     nameTextField.text!,
-                                         email:    emailTextField.text!,
-                                         password: passwordTextField.text!,
-                                         checkBoxTerm: checkBox.state)
+        viewModel?.createAccount( name:         nameTextField.text!,
+                                  email:        emailTextField.text!,
+                                  password:     passwordTextField.text!,
+                                  checkBoxTerm: checkBox.state)
     }
     
 }

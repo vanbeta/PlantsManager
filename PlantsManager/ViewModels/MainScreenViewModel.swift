@@ -21,8 +21,7 @@ class MainScreenViewModel {
 
 extension MainScreenViewModel: MainScreenDelegate {
     
-    
-    
+        
     var getPlants: Dynamic<[Plant]> { model }
 
     func btnAddWasPressed() {

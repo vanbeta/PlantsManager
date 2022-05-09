@@ -46,13 +46,12 @@ class PlantsDataManager {
         userDefaults.set(data, forKey: plantKey)
     }
 
-//    func changeWaterStatus(at index: Int) {
-//        var plants = fetchPlants()
-//        var plant = plants.remove(at: index)
-//        plant.waterStatus.toggle()
-//        plants.insert(plant, at: index)
-//
-//        guard let data = try? JSONEncoder().encode(plants) else { return }
-//        userDefaults.set(data, forKey: plantKey)
-//    }
+    func changeWaterStatus(at index: Int) {
+        var plants = fetchPlants()
+        var plant = plants.remove(at: index)
+        plant.waterStatus.toggle()
+        plants.insert(plant, at: index)
+        guard let data = try? JSONEncoder().encode(plants) else { return }
+        userDefaults.set(data, forKey: plantKey)
+    }
 }

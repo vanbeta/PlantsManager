@@ -14,6 +14,7 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var waterImage: UIImageView!
     @IBOutlet weak var plantName: UILabel!
     @IBOutlet weak var waterLabel: UILabel!
+    @IBOutlet weak var btnCheckMark: UIButton!
         
     override open var frame: CGRect {
         get {
@@ -37,7 +38,13 @@ class MainTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.backgroundColor =  UIColor(red: 0.91, green: 0.96, blue: 0.92, alpha: 1.00)
+        let colors = [UIColor(red: 0.91, green: 0.96, blue: 0.92, alpha: 1.00),
+                      UIColor(red: 0.91, green: 0.95, blue: 0.96, alpha: 1.00),
+                      UIColor(red: 0.91, green: 0.93, blue: 0.96, alpha: 1.00),
+                      UIColor(red: 0.95, green: 0.96, blue: 0.91, alpha: 1.00),
+                      UIColor(red: 0.96, green: 0.93, blue: 0.91, alpha: 1.00)]
+        
+        contentView.backgroundColor = colors.randomElement()
         contentView.layer.cornerRadius = 16
         contentView.layer.masksToBounds = true
         self.selectionStyle = .none
@@ -47,7 +54,18 @@ class MainTableViewCell: UITableViewCell {
         self.plantName.text = plant.name
         self.plantImage?.image = UIImage(named: "flower")
         self.waterImage?.image = UIImage(named: "leica")
-        self.waterLabel?.text = String(plant.waterVolume)
+        self.waterLabel?.text = String(" - \(plant.waterVolume) ml")
+        self.btnCheckMark.isSelected = plant.waterStatus
+        
+        btnCheckMark.setImage(UIImage(named:"checkedCheckMark"), for: .normal)
+        btnCheckMark.setImage(UIImage(named:"uncheckedCheckMark"), for: .selected)
+        btnCheckMark.tag = cellIndex
+    }
+    @IBAction func btnCheckMarkPressed(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+//
+//        contact.favoriteStatus.toggle()
+//        DataManager.shared.changeWaterStatus(at: sender.tag)
     }
 }
 
