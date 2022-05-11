@@ -25,6 +25,5 @@ extension AddPlantViewModel: AddPlantDelegate {
     func btnAddWasPressed() {
         let plant = Plant(name: "Ivan molodec", waterStatus: true, waterVolume: 100)
         PlantsDataManager.shared.save(plant: plant)
-    //    contacts.append(contact)
     }
 }

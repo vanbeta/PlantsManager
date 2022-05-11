@@ -27,7 +27,6 @@ class PlantsDataManager {
     func save(plant: Plant) {
         var plants = fetchPlants()
         plants.append(plant)
-        
         guard let data = try? JSONEncoder().encode(plants) else { return }
         userDefaults.set(data, forKey: plantKey)
     }

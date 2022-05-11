@@ -62,10 +62,8 @@ class MainTableViewCell: UITableViewCell {
         btnCheckMark.tag = cellIndex
     }
     @IBAction func btnCheckMarkPressed(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-//
-//        contact.favoriteStatus.toggle()
-//        DataManager.shared.changeWaterStatus(at: sender.tag)
+        sender.isSelected.toggle()
+        PlantsDataManager.shared.changeWaterStatus(at: sender.tag)
     }
 }
 
