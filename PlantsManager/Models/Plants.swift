@@ -17,18 +17,23 @@ struct Plant: Codable {
 }
 
 class PlantsDataManager {
-    static let shared = PlantsDataManager()
+    
+    
+    var model: [Plant] = []
     
     private let userDefaults = UserDefaults.standard
     private let plantKey = "newPlantList"
     
-    private init() {}
+    init() {
+        self.model = fetchPlants()
+    }
     
     func save(plant: Plant) {
-        var plants = fetchPlants()
-        plants.append(plant)
-        guard let data = try? JSONEncoder().encode(plants) else { return }
+//        var plants = fetchPlants()
+        model.append(plant)
+        guard let data = try? JSONEncoder().encode(model) else { return }
         userDefaults.set(data, forKey: plantKey)
+        model = fetchPlants()
     }
     
     func fetchPlants() -> [Plant] {

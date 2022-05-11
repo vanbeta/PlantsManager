@@ -63,7 +63,7 @@ class MainTableViewCell: UITableViewCell {
     }
     @IBAction func btnCheckMarkPressed(_ sender: UIButton) {
         sender.isSelected.toggle()
-        PlantsDataManager.shared.changeWaterStatus(at: sender.tag)
+//        PlantsDataManager.shared.changeWaterStatus(at: sender.tag)
     }
 }
 

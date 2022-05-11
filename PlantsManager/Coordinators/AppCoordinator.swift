@@ -12,12 +12,12 @@ class AppCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     var model: Users
-    var plants: [Plant]
+    var plantsModel: PlantsDataManager
         
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.model = Users()
-        self.plants = PlantsDataManager.shared.fetchPlants()
+        self.plantsModel = PlantsDataManager()
     }
     
     func start() {
@@ -58,7 +58,7 @@ class AppCoordinator: Coordinator {
     func showMainScreen() {
         let vc = MainScreenViewController.createObject()
         let viewModel = MainScreenViewModel()
-        viewModel.setModel(model: plants)
+        viewModel.setModel(model: plantsModel)
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
@@ -68,6 +68,7 @@ class AppCoordinator: Coordinator {
         let vc = AddPlantViewController.createObject()
         vc.coordinator = self
         let viewModel = AddPlantViewModel()
+        viewModel.setModel(model: plantsModel)
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }

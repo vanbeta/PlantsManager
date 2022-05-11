@@ -14,8 +14,8 @@ class MainScreenViewModel {
     weak var coordinator: AppCoordinator?
     var model: Dynamic<[Plant]> = Dynamic([])
 
-    func setModel(model: [Plant]) {
-        self.model.value = model
+    func setModel(model: PlantsDataManager) {
+        self.model.value = model.model
     }
 }
 
@@ -28,7 +28,7 @@ extension MainScreenViewModel: MainScreenDelegate {
         coordinator?.showAddPlant()
     }
     func removePlant(index: Int) {
-        self.model.value.remove(at: index)
-        PlantsDataManager.shared.removePlant(index: index)
+//        self.model.value.remove(at: index)
+//        PlantsDataManager.shared.removePlant(index: index)
     }
 }
