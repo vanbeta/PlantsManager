@@ -141,8 +141,8 @@
 				7D7EB68A2808146A0024A00A /* LoginViewController.swift */,
 				7D7EB68C280814820024A00A /* CreateAccountViewController.swift */,
 				7DFB40EC281A59EA00D0FEE3 /* MainScreenViewController.swift */,
-				7DFB40F0282103DE00D0FEE3 /* AddPlantViewController.swift */,
 				7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */,
+				7DFB40F0282103DE00D0FEE3 /* AddPlantViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

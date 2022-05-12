@@ -29,8 +29,13 @@ extension MainScreenViewModel: MainScreenDelegate {
     func btnAddWasPressed() {
         coordinator?.showAddPlant()
     }
+    
     func removePlant(index: Int) {
         self.model?.removePlant(index: index)
         self.plants.value.remove(at: index)
+    }
+    
+    func changeCheckMarkWater(at index: Int) {
+        self.model?.changeWaterStatus(at: index)
     }
 }

@@ -10,13 +10,13 @@ import UIKit
 class MainScreenViewController: UIViewController, Storybordable {
     
     
+    @IBOutlet var tableView: UITableView!
+    
     var viewModel: MainScreenDelegate?
     
     private var plants: [Plant] = []
     
     let idCell = "mainCell"
-    
-    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +84,7 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! MainTableViewCell
-        
+        cell.viewModel = self.viewModel
         let plant = plants[indexPath.row]
         cell.configure(with: plant, cellIndex: indexPath.row)
 

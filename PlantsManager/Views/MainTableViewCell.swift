@@ -15,6 +15,8 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var plantName: UILabel!
     @IBOutlet weak var waterLabel: UILabel!
     @IBOutlet weak var btnCheckMark: UIButton!
+    
+    var viewModel: MainScreenDelegate?
         
     override open var frame: CGRect {
         get {
@@ -61,9 +63,10 @@ class MainTableViewCell: UITableViewCell {
         btnCheckMark.setImage(UIImage(named:"uncheckedCheckMark"), for: .selected)
         btnCheckMark.tag = cellIndex
     }
+    
     @IBAction func btnCheckMarkPressed(_ sender: UIButton) {
         sender.isSelected.toggle()
-//        PlantsDataManager.shared.changeWaterStatus(at: sender.tag)
+        self.viewModel?.changeCheckMarkWater(at: sender.tag)
     }
 }
 
