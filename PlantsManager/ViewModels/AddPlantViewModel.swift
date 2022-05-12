@@ -23,7 +23,7 @@ extension AddPlantViewModel: AddPlantDelegate {
     
     
     func btnAddWasPressed() {
-        let plant = Plant(name: "Ivan molodec", waterStatus: true, waterVolume: 200)
+        let plant = Plant(name: "her", waterStatus: true, waterVolume: 200)
         model?.save(plant: plant)
     }
 }

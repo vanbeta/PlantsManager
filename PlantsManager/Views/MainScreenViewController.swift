@@ -15,6 +15,15 @@ class MainScreenViewController: UIViewController, Storybordable {
     var viewModel: MainScreenDelegate?
     
     private var plants: [Plant] = []
+    private let search = UISearchController(searchResultsController: nil)
+    private var filteredPlants = [Plant]()
+    private var searchBarIsEmpty: Bool {
+        guard let text = search.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return search.isActive && !searchBarIsEmpty
+    }
     
     let idCell = "mainCell"
     
@@ -27,9 +36,10 @@ class MainScreenViewController: UIViewController, Storybordable {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
         self.title = "My plants"
-        let search = UISearchController(searchResultsController: nil)
+        
         search.searchResultsUpdater = self
         self.navigationItem.searchController = search
+        search.searchBar.placeholder = "Search"
         
         let btnAdd = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(btnAddClicked))
         navigationItem.rightBarButtonItem = btnAdd
@@ -75,6 +85,9 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredPlants.count
+        }
         return plants.count
     }
     
@@ -85,7 +98,15 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! MainTableViewCell
         cell.viewModel = self.viewModel
-        let plant = plants[indexPath.row]
+        
+        var plant: Plant
+
+        if isFiltering {
+            plant = filteredPlants[indexPath.row]
+        } else {
+            plant = plants[indexPath.row]
+        }
+        
         cell.configure(with: plant, cellIndex: indexPath.row)
 
         return cell
@@ -101,6 +122,13 @@ extension MainScreenViewController: UISearchResultsUpdating {
     
     
     func updateSearchResults(for searchController: UISearchController) {
-        // реализовать поиск
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filteredPlants = plants.filter({ (plant: Plant) -> Bool in
+            return plant.name.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
     }
 }
