@@ -29,7 +29,6 @@ class PlantsDataManager {
     }
     
     func save(plant: Plant) {
-//        var plants = fetchPlants()
         model.append(plant)
         guard let data = try? JSONEncoder().encode(model) else { return }
         userDefaults.set(data, forKey: plantKey)
@@ -48,6 +47,7 @@ class PlantsDataManager {
         plants.remove(at: index)
         guard let data = try? JSONEncoder().encode(plants) else { return }
         userDefaults.set(data, forKey: plantKey)
+        model = fetchPlants()
     }
 
     func changeWaterStatus(at index: Int) {
