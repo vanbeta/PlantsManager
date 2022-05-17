@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "icons8-unchecked-checkbox-50-5.png",
+      "filename" : "temprature.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-unchecked-checkbox-50-6.png",
+      "filename" : "temprature-1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },

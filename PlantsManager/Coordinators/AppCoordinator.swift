@@ -30,7 +30,8 @@ class AppCoordinator: Coordinator {
 //        viewModel.coordinator = self
 //        vc.viewModel = viewModel
 //        navigationController.pushViewController(vc, animated: true)
-        showMainScreen()
+//        showMainScreen()
+        showPagePlant()
     }
     
     func showLogin() {
@@ -68,6 +69,15 @@ class AppCoordinator: Coordinator {
         let vc = AddPlantViewController.createObject()
         vc.coordinator = self
         let viewModel = AddPlantViewModel()
+        viewModel.setModel(model: plantsModel)
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showPagePlant() {
+        let vc = PagePlantViewController.createObject()
+        vc.coordinator = self
+        let viewModel = PagePlantViewModel()
         viewModel.setModel(model: plantsModel)
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)

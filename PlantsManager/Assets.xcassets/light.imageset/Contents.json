@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "icons8-unchecked-checkbox-50-5.png",
+      "filename" : "sun.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-unchecked-checkbox-50-6.png",
+      "filename" : "sun-1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
