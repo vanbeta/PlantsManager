@@ -15,4 +15,5 @@ protocol MainScreenDelegate: AnyObject {
     func btnAddWasPressed()
     func removePlant(index: Int)
     func changeCheckMarkWater(at index: Int)
+    func plantPressed(plant: Plant)
 }

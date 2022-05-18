@@ -10,8 +10,6 @@ import UIKit
 class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDelegate {
  
     
-    
-//    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var viewLastWatering: UIView!
     @IBOutlet weak var viewNextWatering: UIView!
     @IBOutlet weak var name: UILabel!
@@ -22,7 +20,8 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     var coordinator: AppCoordinator?
     var viewModel: PagePlantViewModelDelegate?
 
-    var her = Recomendations()
+    var modelRecomendations = Recomendations()
+    var modelPlant: Plant?
 
     let idCell = "recomendationsCell"
     
@@ -38,7 +37,33 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
         mainImage.image = UIImage(named: "mainImage")
         mainImage.contentMode = UIView.ContentMode.scaleAspectFill
         
-        her.createRecomendations() //!!!
+        modelRecomendations.createRecomendations() //!!!
+        bindPlant()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            // Make the Navigation Bar background transparent
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            self.navigationController?.navigationBar.isTranslucent = true
+            self.navigationController?.navigationBar.tintColor = .white
+            // Remove 'Back' text and Title from Navigation Bar
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            self.title = ""
+    }
+    
+    func bindPlant() {
+        viewModel?.getPlant.bind { plant in
+            DispatchQueue.main.async {
+                self.modelPlant = plant.first
+                self.updatePage()
+            }
+        }
+    }
+    
+    func updatePage() {
+        self.name.text = self.modelPlant?.name
     }
     
     func settingsGroupBoxView(_ view: UIView) {
@@ -57,15 +82,7 @@ extension PagePlantViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCell, for: indexPath) as! RecomendationsTableViewCell
-        
-        cell.configure(with: her.recomendations[indexPath.row])
-        
-        //        if cell == nil {
-        //            cell = UITableViewCell(style: .default, reuseIdentifier: idCell)
-        //        }
-        
-        //        cell.configure(with: Plant(name: "dd", waterStatus: true, waterVolume: 100), cellIndex: indexPath.row)
-        
+        cell.configure(with: modelRecomendations.recomendations[indexPath.row])
         return cell
     }
 }

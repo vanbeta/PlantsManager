@@ -38,4 +38,8 @@ extension MainScreenViewModel: MainScreenDelegate {
     func changeCheckMarkWater(at index: Int) {
         self.model?.changeWaterStatus(at: index)
     }
+    
+    func plantPressed(plant: Plant) {
+        coordinator?.showPagePlant(plant: plant)
+    }
 }

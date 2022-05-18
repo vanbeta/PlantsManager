@@ -113,7 +113,7 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // реализовать клик на ячейку
+        self.viewModel?.plantPressed(plant: plants[indexPath.item])
     }
     
 }

@@ -8,14 +8,19 @@
 import Foundation
 
 class PagePlantViewModel {
-    var model: PlantsDataManager?
     
-    func setModel(model: PlantsDataManager) {
-        self.model = model
+    
+    var plant: Dynamic<[Plant]> = Dynamic([])
+    
+    func setModel(model: Plant) {
+        let arr = [model]
+        self.plant.value = arr
     }
+    
 }
 
 extension PagePlantViewModel: PagePlantViewModelDelegate {
     
     
+    var getPlant: Dynamic<[Plant]> { plant }
 }

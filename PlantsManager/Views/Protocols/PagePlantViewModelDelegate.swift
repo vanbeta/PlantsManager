@@ -11,5 +11,5 @@ import Foundation
 protocol PagePlantViewModelDelegate: AnyObject {
     
     
-    
+    var getPlant: Dynamic<[Plant]> { get }
 }
