@@ -113,7 +113,11 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel?.plantPressed(plant: plants[indexPath.item])
+        if isFiltering {
+            self.viewModel?.plantPressed(plant: filteredPlants[indexPath.row])
+        } else {
+            self.viewModel?.plantPressed(plant: plants[indexPath.item])
+        }
     }
     
 }
