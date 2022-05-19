@@ -821,6 +821,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Vyw-zv-fKL" id="NxB-DZ-wsg"/>
+                        <outlet property="labeLastWatering" destination="CXz-BE-f9a" id="OBY-2C-PrT"/>
+                        <outlet property="labeNextWatering" destination="NRc-yw-w6f" id="0dK-Gt-C1a"/>
                         <outlet property="mainImage" destination="zXq-lC-Zlp" id="uye-C8-8xi"/>
                         <outlet property="mainView" destination="BXX-yV-BCV" id="prr-61-b99"/>
                         <outlet property="name" destination="xhj-ON-jfB" id="9Pe-g0-RTo"/>

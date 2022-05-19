@@ -37,6 +37,7 @@ extension MainScreenViewModel: MainScreenDelegate {
     
     func changeCheckMarkWater(at index: Int) {
         self.model?.changeWaterStatus(at: index)
+        self.plants.value = (self.model?.fetchPlants())!
     }
     
     func plantPressed(plant: Plant) {

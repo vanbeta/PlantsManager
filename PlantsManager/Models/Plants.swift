@@ -14,6 +14,7 @@ struct Plant: Codable {
     var name: String
     var waterStatus: Bool = false
     var waterVolume: Int
+    var lastWatering: Date?
 }
 
 class PlantsDataManager {
@@ -54,6 +55,7 @@ class PlantsDataManager {
         var plants = fetchPlants()
         var plant = plants.remove(at: index)
         plant.waterStatus.toggle()
+        plant.lastWatering = Date()
         plants.insert(plant, at: index)
         guard let data = try? JSONEncoder().encode(plants) else { return }
         userDefaults.set(data, forKey: plantKey)
