@@ -33,10 +33,6 @@ class MainScreenViewController: UIViewController, Storybordable {
         tableView.dataSource = self
         tableView.delegate = self
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-        self.title = "My plants"
-        
         search.searchResultsUpdater = self
         self.navigationItem.searchController = search
         search.searchBar.placeholder = "Search"
@@ -48,12 +44,15 @@ class MainScreenViewController: UIViewController, Storybordable {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Navigation Customization
+        self.title = "My plants"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.tintColor = .black
+        
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.shadowImage = nil
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         
-        // Remove 'Back' text and Title from Navigation Bar
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     

@@ -29,6 +29,7 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20);
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -45,14 +46,32 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Make the Navigation Bar background transparent
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.tintColor = .white
-        // Remove 'Back' text and Title from Navigation Bar
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.title = ""
+        
+        let btnBack = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = btnBack
+
+        let btnExtra = UIBarButtonItem(title: "", image: UIImage(named: "dots"), primaryAction: nil, menu: menu)
+        navigationItem.rightBarButtonItem = btnExtra
+
+//        let imgBackArrow = UIImage(named: "light")
+//        navigationController?.navigationBar.backIndicatorImage = imgBackArrow
+//        navigationController?.navigationBar.backIndicatorTransitionMaskImage = imgBackArrow
+    }
+    
+    var menuItems: [UIAction] {
+        return [
+            UIAction(title: "Edit", image: UIImage(named: "edit"), handler: { (_) in
+            }),
+            UIAction(title: "Delete..", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { (_) in
+            })
+        ]
+    }
+
+    var menu: UIMenu {
+        return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
     }
     
     func bindPlant() {
