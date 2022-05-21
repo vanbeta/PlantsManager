@@ -11,7 +11,7 @@ import Foundation
 class AddPlantViewModel {
     
     
-    var model: PlantsDataManager?
+    weak var model: PlantsDataManager?
     
     func setModel(model: PlantsDataManager) {
         self.model = model
@@ -23,7 +23,7 @@ extension AddPlantViewModel: AddPlantDelegate {
     
     
     func btnAddWasPressed() {
-        let plant = Plant(name: "her", waterStatus: true, waterVolume: 200)
+        let plant = Plant(name: "valer", waterStatus: true, waterVolume: 200)
         model?.save(plant: plant)
     }
 }

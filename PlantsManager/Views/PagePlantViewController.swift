@@ -66,6 +66,13 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
             UIAction(title: "Edit", image: UIImage(named: "edit"), handler: { (_) in
             }),
             UIAction(title: "Delete..", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { (_) in
+                    self.showRemoveAlert(with: "", and: "Would you like to delete this plant", { [self] Ok in
+                    if Ok {
+                        self.viewModel?.removePlant()
+                        self.coordinator?.showMainScreen()
+                    } else {
+                    }
+                })
             })
         ]
     }

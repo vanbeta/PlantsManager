@@ -12,8 +12,8 @@ class MainScreenViewModel {
     
     
     weak var coordinator: AppCoordinator?
+    weak var model: PlantsDataManager?
     var plants: Dynamic<[Plant]> = Dynamic([])
-    var model: PlantsDataManager?
 
     func setModel(model: PlantsDataManager) {
         self.plants.value = model.model
@@ -23,16 +23,16 @@ class MainScreenViewModel {
 
 extension MainScreenViewModel: MainScreenDelegate {
     
-        
+            
     var getPlants: Dynamic<[Plant]> { plants }
 
     func btnAddWasPressed() {
         coordinator?.showAddPlant()
     }
     
-    func removePlant(index: Int) {
-        self.model?.removePlant(index: index)
-        self.plants.value.remove(at: index)
+    func removePlant(id: UUID) {
+        self.model?.removePlant(id: id)
+        self.plants.value.removeAll(where: {$0.id == id})
     }
     
     func changeCheckMarkWater(at index: Int) {
@@ -40,7 +40,7 @@ extension MainScreenViewModel: MainScreenDelegate {
         self.plants.value = (self.model?.fetchPlants())!
     }
     
-    func plantPressed(plant: Plant) {
-        coordinator?.showPagePlant(plant: plant)
+    func plantPressed(id: UUID) {
+        coordinator?.showPagePlant(id: id)
     }
 }

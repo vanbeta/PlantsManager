@@ -10,10 +10,17 @@ import Foundation
 class PagePlantViewModel {
     
     
+    weak var model: PlantsDataManager?
     var plant: Dynamic<[Plant]> = Dynamic([])
+    var id: UUID?
     
-    func setModel(model: Plant) {
-        let arr = [model]
+    init (id: UUID) {
+        self.id = id
+    }
+    
+    func setModel(model: PlantsDataManager) {
+        self.model = model
+        let arr = [self.model!.fetchPlants().first(where: {$0.id == self.id})!]
         self.plant.value = arr
     }
     
@@ -23,4 +30,8 @@ extension PagePlantViewModel: PagePlantViewModelDelegate {
     
     
     var getPlant: Dynamic<[Plant]> { plant }
+    
+    func removePlant() {
+        self.model?.removePlant(id: self.id!)
+    }
 }

@@ -11,6 +11,7 @@ import Foundation
 struct Plant: Codable {
     
     
+    var id = UUID()
     var name: String
     var waterStatus: Bool = false
     var waterVolume: Int
@@ -43,9 +44,9 @@ class PlantsDataManager {
         return plants
     }
     
-    func removePlant(index: Int) {
+    func removePlant(id: UUID) {
         var plants = fetchPlants()
-        plants.remove(at: index)
+        plants.removeAll(where: {$0.id == id})
         guard let data = try? JSONEncoder().encode(plants) else { return }
         userDefaults.set(data, forKey: plantKey)
         model = fetchPlants()

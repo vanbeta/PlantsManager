@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "icons8-dots-32.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-dots-64.png",
+      "filename" : "icons8-menu-vertical-50.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

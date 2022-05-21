@@ -69,7 +69,7 @@ class MainScreenViewController: UIViewController, Storybordable {
         let swipeDel = UIContextualAction(style: .normal, title: "") { [self] action, view, success in
             showRemoveAlert(with: "", and: "Would you like to delete this plant", { [self] Ok in
                 if Ok {
-                    viewModel?.removePlant(index: indexPath.item)
+                    viewModel?.removePlant(id: plants[indexPath.item].id)
                     success(true)
                 } else {
                     success(false)
@@ -123,9 +123,9 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFiltering {
-            self.viewModel?.plantPressed(plant: filteredPlants[indexPath.row])
+            self.viewModel?.plantPressed(id: filteredPlants[indexPath.row].id)
         } else {
-            self.viewModel?.plantPressed(plant: plants[indexPath.item])
+            self.viewModel?.plantPressed(id: plants[indexPath.item].id)
         }
     }
     

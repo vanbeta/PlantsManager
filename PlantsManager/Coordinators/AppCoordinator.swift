@@ -62,6 +62,7 @@ class AppCoordinator: Coordinator {
         viewModel.setModel(model: plantsModel)
         viewModel.coordinator = self
         vc.viewModel = viewModel
+        navigationController.viewControllers.removeAll()
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -74,11 +75,11 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showPagePlant(plant: Plant) {
+    func showPagePlant(id: UUID) {
         let vc = PagePlantViewController.createObject()
         vc.coordinator = self
-        let viewModel = PagePlantViewModel()
-        viewModel.setModel(model: plant)
+        let viewModel = PagePlantViewModel(id: id)
+        viewModel.setModel(model: plantsModel)
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
