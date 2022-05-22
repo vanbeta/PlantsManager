@@ -12,11 +12,11 @@ class CreateAccountViewModel {
 
     
     weak var coordinator: AppCoordinator?
-    var model: Users?
+    var model: UsersDataManager?
     var showAlert = Dynamic(("", ""))
     var showError = Dynamic("")
 
-    func setModel(model: Users) {
+    func setModel(model: UsersDataManager) {
         self.model = model
     }
 }
@@ -47,7 +47,7 @@ extension CreateAccountViewModel: CreateAccountDelegate {
             return
         }
         
-        model?.addUser(name: name, email: email, password: password) { errorResult in
+        model?.addUser(user: User(name: name, email: email, password: password)) { errorResult in
             switch errorResult {
             case .success:
                 print("created user bro")

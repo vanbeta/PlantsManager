@@ -11,10 +11,10 @@ class LoginViewModel {
     
     
     weak var coordinator: AppCoordinator?
-    var model: Users?
+    var model: UsersDataManager?
     var showError = Dynamic("")
     
-    func setModel(model: Users) {
+    func setModel(model: UsersDataManager) {
         self.model = model
     }
     
@@ -24,11 +24,11 @@ class LoginViewModel {
         guard !email.isEmpty    else { onResult(ErrorResult.failure(UserError.emptyEmail))    ; return }
         guard !password.isEmpty else { onResult(ErrorResult.failure(UserError.emptyPassword)) ; return }
         
-        guard model.logins.contains(where: { $0.email == email }) else {
+        guard model.users.contains(where: { $0.email == email }) else {
             onResult(ErrorResult.failure(UserError.notFoundEmail))
             return
         }
-        guard model.logins.first(where: {$0.password == password }) != nil else{
+        guard model.users.first(where: {$0.password == password }) != nil else{
             onResult(ErrorResult.failure(UserError.notFoundPassword))
             return
         }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D4F1B75280FF50D00B579EC /* UIextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B74280FF50D00B579EC /* UIextension.swift */; };
 		7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */; };
-		7D4F1B7928129DF100B579EC /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B7828129DF100B579EC /* Users.swift */; };
+		7D4F1B7928129DF100B579EC /* UsersDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B7828129DF100B579EC /* UsersDataManager.swift */; };
 		7D6E4179282D07AB006DC293 /* PagePlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E4178282D07AB006DC293 /* PagePlantViewController.swift */; };
 		7D6E417B282D07F2006DC293 /* PagePlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E417A282D07F2006DC293 /* PagePlantViewModel.swift */; };
 		7D6E417D282D0816006DC293 /* PagePlantViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E417C282D0816006DC293 /* PagePlantViewModelDelegate.swift */; };
@@ -39,14 +39,14 @@
 		7DFB40F72821520D00D0FEE3 /* AddPlantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */; };
 		7DFB40F9282153A000D0FEE3 /* MainScreenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */; };
 		7DFB40FC282153C700D0FEE3 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */; };
-		7DFB40FE282181BF00D0FEE3 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FD282181BF00D0FEE3 /* Plants.swift */; };
+		7DFB40FE282181BF00D0FEE3 /* PlantsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FD282181BF00D0FEE3 /* PlantsDataManager.swift */; };
 		7DFB410028238B1000D0FEE3 /* WelcomViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB40FF28238B1000D0FEE3 /* WelcomViewModelDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D4F1B74280FF50D00B579EC /* UIextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIextension.swift; sourceTree = "<group>"; };
 		7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountDelegate.swift; sourceTree = "<group>"; };
-		7D4F1B7828129DF100B579EC /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		7D4F1B7828129DF100B579EC /* UsersDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataManager.swift; sourceTree = "<group>"; };
 		7D6E4178282D07AB006DC293 /* PagePlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePlantViewController.swift; sourceTree = "<group>"; };
 		7D6E417A282D07F2006DC293 /* PagePlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePlantViewModel.swift; sourceTree = "<group>"; };
 		7D6E417C282D0816006DC293 /* PagePlantViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePlantViewModelDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		7DFB40F62821520D00D0FEE3 /* AddPlantDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantDelegate.swift; sourceTree = "<group>"; };
 		7DFB40F8282153A000D0FEE3 /* MainScreenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenDelegate.swift; sourceTree = "<group>"; };
 		7DFB40FB282153C700D0FEE3 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
-		7DFB40FD282181BF00D0FEE3 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
+		7DFB40FD282181BF00D0FEE3 /* PlantsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDataManager.swift; sourceTree = "<group>"; };
 		7DFB40FF28238B1000D0FEE3 /* WelcomViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewModelDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,9 +135,9 @@
 		7D9297BD2796E2C900697523 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7D4F1B7828129DF100B579EC /* Users.swift */,
+				7D4F1B7828129DF100B579EC /* UsersDataManager.swift */,
 				7DFB40EA2817D43800D0FEE3 /* UserError.swift */,
-				7DFB40FD282181BF00D0FEE3 /* Plants.swift */,
+				7DFB40FD282181BF00D0FEE3 /* PlantsDataManager.swift */,
 				7DA466AF283A4F1B00337FB1 /* FullRecomendations.swift */,
 			);
 			path = Models;
@@ -321,10 +321,10 @@
 				7D9297C72797FB9700697523 /* Dynamic.swift in Sources */,
 				7D7EB6872807E4610024A00A /* Strorybordable.swift in Sources */,
 				7DFB40EF281BC85A00D0FEE3 /* MainTableViewCell.swift in Sources */,
-				7D4F1B7928129DF100B579EC /* Users.swift in Sources */,
+				7D4F1B7928129DF100B579EC /* UsersDataManager.swift in Sources */,
 				7D7EB691280846F30024A00A /* LoginViewModel.swift in Sources */,
 				7DFB40F32821043600D0FEE3 /* AddPlantViewModel.swift in Sources */,
-				7DFB40FE282181BF00D0FEE3 /* Plants.swift in Sources */,
+				7DFB40FE282181BF00D0FEE3 /* PlantsDataManager.swift in Sources */,
 				7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */,
 				7DFB40F72821520D00D0FEE3 /* AddPlantDelegate.swift in Sources */,
 				7D7EB6942808470D0024A00A /* CreateAccountViewModel.swift in Sources */,

@@ -11,13 +11,15 @@ class AppCoordinator: Coordinator {
     
     
     var navigationController: UINavigationController
-    var model: Users
+    var model: UsersDataManager
     var plantsModel: PlantsDataManager
+    var usersModel: UsersDataManager
         
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.model = Users()
+        self.model = UsersDataManager()
         self.plantsModel = PlantsDataManager()
+        self.usersModel = UsersDataManager()
     }
     
     func start() {
@@ -25,18 +27,14 @@ class AppCoordinator: Coordinator {
     }
     
     func showWelcom() {
-//        let vc = WelcomeViewController.createObject()
-//        let viewModel = WelcomViewModel()
-//        viewModel.coordinator = self
-//        vc.viewModel = viewModel
-//        navigationController.pushViewController(vc, animated: true)
-        showMainScreen()
-//        showPagePlant()
+        let vc = WelcomeViewController.createObject()
+        let viewModel = WelcomViewModel()
+        viewModel.coordinator = self
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
     }
     
     func showLogin() {
-        model.logins.append(User(name: "ivan", email: "admin", password: "admin"))
-
         let vc = LoginViewController.createObject()
         let viewModel = LoginViewModel()
         viewModel.coordinator = self
