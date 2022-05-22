@@ -40,13 +40,6 @@ class MainTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let colors = [UIColor(red: 0.91, green: 0.96, blue: 0.92, alpha: 1.00),
-                      UIColor(red: 0.91, green: 0.95, blue: 0.96, alpha: 1.00),
-                      UIColor(red: 0.91, green: 0.93, blue: 0.96, alpha: 1.00),
-                      UIColor(red: 0.95, green: 0.96, blue: 0.91, alpha: 1.00),
-                      UIColor(red: 0.96, green: 0.93, blue: 0.91, alpha: 1.00)]
-        
-        contentView.backgroundColor = colors.randomElement()
         contentView.layer.cornerRadius = 16
         contentView.layer.masksToBounds = true
         self.selectionStyle = .none
@@ -61,6 +54,9 @@ class MainTableViewCell: UITableViewCell {
         
         btnCheckMark.setImage(UIImage(named:"checkedCheckMark"), for: .normal)
         btnCheckMark.setImage(UIImage(named:"uncheckedCheckMark"), for: .selected)
+        
+        contentView.backgroundColor = plant.color.uiColor
+        
         btnCheckMark.tag = cellIndex
     }
     

@@ -22,7 +22,6 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     var coordinator: AppCoordinator?
     var viewModel: PagePlantViewModelDelegate?
     
-    var modelRecomendations = Recomendations()
     var modelPlant: Plant?
     
     let idCell = "recomendationsCell"
@@ -40,7 +39,6 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
         mainImage.image = UIImage(named: "mainImage")
         mainImage.contentMode = UIView.ContentMode.scaleAspectFill
         
-        modelRecomendations.createRecomendations() //!!!
         bindPlant()
     }
     
@@ -55,10 +53,6 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
 
         let btnExtra = UIBarButtonItem(title: "", image: UIImage(named: "dots"), primaryAction: nil, menu: menu)
         navigationItem.rightBarButtonItem = btnExtra
-
-//        let imgBackArrow = UIImage(named: "light")
-//        navigationController?.navigationBar.backIndicatorImage = imgBackArrow
-//        navigationController?.navigationBar.backIndicatorTransitionMaskImage = imgBackArrow
     }
     
     var menuItems: [UIAction] {
@@ -70,9 +64,7 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
                     if Ok {
                         self.viewModel?.removePlant()
                         self.coordinator?.showMainScreen()
-                    } else {
-                    }
-                })
+                    } })
             })
         ]
     }
@@ -84,8 +76,10 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     func bindPlant() {
         viewModel?.getPlant.bind { plant in
             DispatchQueue.main.async {
+                print("update")
                 self.modelPlant = plant.first
                 self.updatePage()
+                self.collectionView.reloadData()
             }
         }
     }
@@ -119,7 +113,8 @@ extension PagePlantViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCell, for: indexPath) as! RecomendationsTableViewCell
-        cell.configure(with: modelRecomendations.recomendations[indexPath.row])
+        cell.viewModel = self.viewModel
+        cell.configure(with: modelPlant?.recomendations[indexPath.row] ?? Recomendation(title: Recomendation.titles.water, period: "666") )
         return cell
     }
 }

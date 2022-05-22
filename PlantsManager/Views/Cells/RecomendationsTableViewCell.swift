@@ -9,11 +9,12 @@ import UIKit
 
 class RecomendationsTableViewCell: UICollectionViewCell {
     
+    var viewModel: PagePlantViewModelDelegate?
     
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var period: UILabel!
-        
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -26,9 +27,10 @@ class RecomendationsTableViewCell: UICollectionViewCell {
     }
     
     func configure(with recomendation: Recomendation) {
-        self.mainImage?.image = recomendation.image
-        self.mainTitle?.text = recomendation.title
+        let fullRecomentadions = viewModel?.getFullRecomentadions().first { $0.title == recomendation.title.rawValue }
+        self.mainImage?.image = fullRecomentadions?.image
+        self.mainTitle?.text = fullRecomentadions?.title
         self.period?.text = recomendation.period
-        contentView.backgroundColor = recomendation.color
+        contentView.backgroundColor = fullRecomentadions?.color
     }
 }

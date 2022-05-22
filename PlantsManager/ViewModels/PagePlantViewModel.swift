@@ -34,4 +34,10 @@ extension PagePlantViewModel: PagePlantViewModelDelegate {
     func removePlant() {
         self.model?.removePlant(id: self.id!)
     }
+    
+    func getFullRecomentadions() -> [FullRecomentadion] {
+        let modelFull = FullRecomentadions() //!!
+        return modelFull.fullRecomentadions
+    }
+
 }

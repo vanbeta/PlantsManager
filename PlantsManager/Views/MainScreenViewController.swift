@@ -10,6 +10,7 @@ import UIKit
 class MainScreenViewController: UIViewController, Storybordable {
     
     
+    @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet var tableView: UITableView!
     
     var viewModel: MainScreenDelegate?
@@ -37,9 +38,11 @@ class MainScreenViewController: UIViewController, Storybordable {
         self.navigationItem.searchController = search
         search.searchBar.placeholder = "Search"
         
-        let btnAdd = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(btnAddClicked))
-        navigationItem.rightBarButtonItem = btnAdd
-                
+        let btnAccount = UIBarButtonItem(title: "Log out", style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = btnAccount
+        
+        btnAdd.setImage(UIImage(named: "add"), for: .normal)
+
         bindPlants()
     }
     
@@ -47,7 +50,6 @@ class MainScreenViewController: UIViewController, Storybordable {
         self.title = "My plants"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-        self.navigationController?.navigationBar.tintColor = .black
         
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.shadowImage = nil
@@ -55,7 +57,7 @@ class MainScreenViewController: UIViewController, Storybordable {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
-    
+
     func bindPlants() {
         viewModel?.getPlants.bind { value in
             DispatchQueue.main.async {
@@ -84,9 +86,13 @@ class MainScreenViewController: UIViewController, Storybordable {
         
         return swipeAction
     }
-    
-    @objc func btnAddClicked() {
+
+    @IBAction func btnAddPressed(_ sender: Any) {
         viewModel?.btnAddWasPressed()
+    }
+    
+    @objc func btnAccountClicked() {
+        print("btnAccountClicked")
     }
 }
 
@@ -128,7 +134,6 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
             self.viewModel?.plantPressed(id: plants[indexPath.item].id)
         }
     }
-    
 }
 
 extension MainScreenViewController: UISearchResultsUpdating {

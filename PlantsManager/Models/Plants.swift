@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 struct Plant: Codable {
@@ -16,6 +17,35 @@ struct Plant: Codable {
     var waterStatus: Bool = false
     var waterVolume: Int
     var lastWatering: Date?
+    var color: ColorWrapper
+    var recomendations: [Recomendation]
+}
+
+struct ColorWrapper: Codable {
+    
+    
+    var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
+    
+    var uiColor: UIColor {
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
+    init(uiColor: UIColor) {
+        uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+    }
+}
+
+struct Recomendation: Codable {
+    
+    
+    enum titles: String, Codable {
+        case water = "WATER"
+        case soil = "SOIL"
+        case light = "LIGHT"
+        case temprature = "TEMPRATURE"
+    }
+    var title: titles
+    var period: String
 }
 
 class PlantsDataManager {

@@ -532,21 +532,38 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GO2-dm-mqj">
+                                <rect key="frame" x="182" y="795" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GSV-i6-XIG"/>
+                                    <constraint firstAttribute="width" constant="50" id="cCs-1W-EG8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <connections>
+                                    <action selector="btnAddPressed:" destination="vv3-Ww-9dE" eventType="touchUpInside" id="5fu-RV-yQd"/>
+                                    <action selector="btnAddPressed:" destination="fuL-w5-gOK" eventType="touchUpInside" id="iDc-4W-u9P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tmi-zB-zT3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ASe-yM-sdc" firstAttribute="leading" secondItem="tmi-zB-zT3" secondAttribute="leading" constant="20" id="2ha-ZR-5At"/>
+                            <constraint firstItem="GO2-dm-mqj" firstAttribute="centerX" secondItem="tmi-zB-zT3" secondAttribute="centerX" id="4ZY-h2-NJA"/>
                             <constraint firstItem="tmi-zB-zT3" firstAttribute="bottom" secondItem="ASe-yM-sdc" secondAttribute="bottom" id="75f-XR-Gg1"/>
                             <constraint firstItem="ASe-yM-sdc" firstAttribute="top" secondItem="tmi-zB-zT3" secondAttribute="top" id="8bV-Gj-hNZ"/>
+                            <constraint firstItem="GO2-dm-mqj" firstAttribute="bottom" secondItem="tmi-zB-zT3" secondAttribute="bottom" constant="-17" id="9u1-pv-Caf"/>
                             <constraint firstItem="tmi-zB-zT3" firstAttribute="trailing" secondItem="ASe-yM-sdc" secondAttribute="trailing" constant="20" id="Q9N-i6-tAM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnAdd" destination="GO2-dm-mqj" id="oH4-AV-tR5"/>
                         <outlet property="tableView" destination="ASe-yM-sdc" id="xpE-Rk-CWo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKB-io-x0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="vv3-Ww-9dE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="858" y="52"/>
         </scene>
