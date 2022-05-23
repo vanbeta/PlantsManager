@@ -27,9 +27,11 @@ class UsersDataManager {
     }
         
     func addUser(user: User, onResult: (ErrorResult) -> Void ) {
-        guard !user.name.isEmpty     else { onResult(ErrorResult.failure(UserError.emptyName));     return }
-        guard !user.email.isEmpty    else { onResult(ErrorResult.failure(UserError.emptyEmail));    return }
-        guard !user.password.isEmpty else { onResult(ErrorResult.failure(UserError.emptyPassword)); return }
+        guard !user.name.isEmpty     else { onResult(ErrorResult.failure(UserError.emptyName));       return }
+        guard !user.email.isEmpty    else { onResult(ErrorResult.failure(UserError.emptyEmail));      return }
+        guard !user.password.isEmpty else { onResult(ErrorResult.failure(UserError.emptyPassword));   return }
+        guard !users.contains(where: { $0.name == user.name })
+                                     else {onResult(ErrorResult.failure(UserError.nameAlreadyExist)); return }
         
         users.append(user)
         guard let data = try? JSONEncoder().encode(users) else { return }

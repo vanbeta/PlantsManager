@@ -22,6 +22,7 @@ enum UserError {
     case emptyName
     case notFoundEmail
     case notFoundPassword
+    case nameAlreadyExist
 }
 
 extension UserError: LocalizedError {
@@ -39,6 +40,8 @@ extension UserError: LocalizedError {
             return NSLocalizedString("email not found", comment: "")
         case .notFoundPassword:
             return NSLocalizedString("Wrong password", comment: "")
+        case .nameAlreadyExist:
+            return NSLocalizedString("Name already exist, try another name", comment: "")
         }
     }
 }

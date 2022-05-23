@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "soil.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Soil-1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
