@@ -50,7 +50,7 @@ extension CreateAccountViewModel: CreateAccountDelegate {
         model?.addUser(user: User(name: name, email: email, password: password)) { errorResult in
             switch errorResult {
             case .success:
-                print("created user bro")
+                coordinator?.showLogin()
             case .failure(let error):
                 showError.value = error.localizedDescription
             }

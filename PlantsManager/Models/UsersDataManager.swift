@@ -19,11 +19,14 @@ class UsersDataManager {
     
     private let userDefaults = UserDefaults.standard
     private let usersKey = "newUserList"
+    private let currentUserKey = "currentUser"
     
     var users: [User] = []
+    var currentUser: String = ""
     
     init() {
         self.users = fetchUsers()
+        self.currentUser = fetchCurrentUser()
     }
         
     func addUser(user: User, onResult: (ErrorResult) -> Void ) {
@@ -36,7 +39,7 @@ class UsersDataManager {
         users.append(user)
         guard let data = try? JSONEncoder().encode(users) else { return }
         userDefaults.set(data, forKey: usersKey)
-        users = fetchUsers()
+        self.users = fetchUsers()
         
         onResult(ErrorResult.success)
     }
@@ -45,6 +48,18 @@ class UsersDataManager {
         guard let data = userDefaults.object(forKey: usersKey) as? Data else { return [] }
         guard let model = try? JSONDecoder().decode([User].self, from: data) else { return [] }
 
+        return model
+    }
+    
+    func setCurrentUser(currentUser: String) {
+        guard let data = try? JSONEncoder().encode(currentUser) else { return }
+        userDefaults.set(data, forKey: currentUserKey)
+        self.currentUser = fetchCurrentUser()
+    }
+    
+    func fetchCurrentUser() -> String {
+        guard let data = userDefaults.object(forKey: currentUserKey) as? Data else { return "" }
+        guard let model = try? JSONDecoder().decode(String.self, from: data) else { return "" }
         return model
     }
 }
