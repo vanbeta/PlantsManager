@@ -28,9 +28,9 @@ class RecomendationsTableViewCell: UICollectionViewCell {
     
     func configure(with recomendation: Recomendation) {
         let fullRecomentadions = viewModel?.getFullRecomentadions().first { $0.title == recomendation.title.rawValue }
-        self.mainImage?.image = fullRecomentadions?.image
-        self.mainTitle?.text = fullRecomentadions?.title
-        self.period?.text = recomendation.period
+        mainImage?.image = fullRecomentadions?.image
+        mainTitle?.text = fullRecomentadions?.title
+        period?.text = recomendation.period
         contentView.backgroundColor = fullRecomentadions?.color
     }
 }

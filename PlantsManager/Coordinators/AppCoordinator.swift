@@ -27,11 +27,15 @@ class AppCoordinator: Coordinator {
     }
     
     func showWelcom() {
-        let vc = WelcomeViewController.createObject()
-        let viewModel = WelcomViewModel()
-        viewModel.coordinator = self
-        vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: true)
+        if usersModel.getCurrentUser().isEmpty {
+            let vc = WelcomeViewController.createObject()
+            let viewModel = WelcomViewModel()
+            viewModel.coordinator = self
+            vc.viewModel = viewModel
+            navigationController.pushViewController(vc, animated: true)
+        } else {
+            showMainScreen()
+        }
     }
     
     func showLogin() {
@@ -58,6 +62,7 @@ class AppCoordinator: Coordinator {
         let vc = MainScreenViewController.createObject()
         let viewModel = MainScreenViewModel()
         viewModel.setModel(model: plantsModel)
+        viewModel.setUsersModel(model: usersModel)
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.viewControllers.removeAll()

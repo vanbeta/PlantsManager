@@ -22,7 +22,13 @@ class UsersDataManager {
     
     var users: [Users] = []
     
+    private var currentUser = ""
+    private var currentUserKey = "currentUser"
+    private let userDefaults = UserDefaults.standard
+
+    
     init() {
+        self.currentUser = fetchCurrentUser()
     }
         // переписать тут добавление юзера
     
@@ -94,16 +100,22 @@ class UsersDataManager {
 //    }
     
     func setCurrentUser(currentUser: String) {
-//        guard let data = try? JSONEncoder().encode(currentUser) else { return }
-//        userDefaults.set(data, forKey: currentUserKey)
-//        self.currentUser = fetchCurrentUser()
+        guard let data = try? JSONEncoder().encode(currentUser) else { return }
+        userDefaults.set(data, forKey: currentUserKey)
+        self.currentUser = fetchCurrentUser()
     }
     
     func fetchCurrentUser() -> String {
-//        guard let data = userDefaults.object(forKey: currentUserKey) as? Data else { return "" }
-//        guard let model = try? JSONDecoder().decode(String.self, from: data) else { return "" }
-//        return model
-        return  "her"
+        guard let data = userDefaults.object(forKey: currentUserKey) as? Data else { return "" }
+        guard let model = try? JSONDecoder().decode(String.self, from: data) else { return "" }
+        return model
     }
-
+    
+    func getCurrentUser() -> String{
+        return currentUser
+    }
+    
+    func logOutUser() {
+        setCurrentUser(currentUser: "")
+    }
 }

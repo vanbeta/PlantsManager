@@ -38,7 +38,10 @@ class MainScreenViewController: UIViewController, Storybordable {
         self.navigationItem.searchController = search
         search.searchBar.placeholder = "Search"
         
-        let btnAccount = UIBarButtonItem(title: "Log out", style: .plain, target: nil, action: nil)
+        let btnAccount = UIBarButtonItem(title: "Log out",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(btnLogOutClicked))
         navigationItem.rightBarButtonItem = btnAccount
         
         btnAdd.setImage(UIImage(named: "add"), for: .normal)
@@ -88,11 +91,11 @@ class MainScreenViewController: UIViewController, Storybordable {
     }
 
     @IBAction func btnAddPressed(_ sender: Any) {
-        viewModel?.btnAddWasPressed()
+        viewModel?.addWasPressed()
     }
     
-    @objc func btnAccountClicked() {
-        print("btnAccountClicked")
+    @objc func btnLogOutClicked() {
+        viewModel?.logOut()
     }
 }
 
@@ -129,9 +132,9 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFiltering {
-            self.viewModel?.plantPressed(id: filteredPlants[indexPath.row].id)
+            viewModel?.plantPressed(id: filteredPlants[indexPath.row].id)
         } else {
-            self.viewModel?.plantPressed(id: plants[indexPath.item].id)
+            viewModel?.plantPressed(id: plants[indexPath.item].id)
         }
     }
 }

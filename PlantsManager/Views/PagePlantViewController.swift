@@ -76,7 +76,6 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     func bindPlant() {
         viewModel?.getPlant.bind { plant in
             DispatchQueue.main.async {
-                print("update")
                 self.modelPlant = plant.first
                 self.updatePage()
                 self.collectionView.reloadData()
@@ -85,8 +84,8 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     }
     
     func updatePage() {
-        self.name.text = self.modelPlant?.name
-        self.labeLastWatering.text = dateFormatter(date: self.modelPlant?.lastWatering)
+        name.text = modelPlant?.name
+        labeLastWatering.text = dateFormatter(date: modelPlant?.lastWatering)
     }
     
     func dateFormatter(date: Date?) -> String {

@@ -32,7 +32,7 @@ extension PagePlantViewModel: PagePlantViewModelDelegate {
     var getPlant: Dynamic<[Plant]> { plant }
     
     func removePlant() {
-        self.model?.removePlant(id: self.id!)
+        model?.removePlant(id: self.id!)
     }
     
     func getFullRecomentadions() -> [FullRecomentadion] {

@@ -12,8 +12,9 @@ protocol MainScreenDelegate: AnyObject {
     
 
     var getPlants: Dynamic<[Plant]> { get }
-    func btnAddWasPressed()
+    func addWasPressed()
     func removePlant(id: UUID)
     func changeCheckMarkWater(at index: Int)
     func plantPressed(id: UUID)
+    func logOut()
 }

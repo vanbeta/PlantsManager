@@ -46,6 +46,7 @@ extension LoginViewModel: LoginViewModelDelegate {
         checkAccessWorker(email: email, password: password) { errorResult in
             switch errorResult {
             case .success:
+                model?.setCurrentUser(currentUser: email)
                 coordinator?.showMainScreen()
             case .failure(let error):
                 showError.value = error.localizedDescription

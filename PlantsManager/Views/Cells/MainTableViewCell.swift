@@ -46,11 +46,11 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func configure(with plant: Plant, cellIndex: Int) {
-        self.plantName.text = plant.name
-        self.plantImage?.image = UIImage(named: "flower")
-        self.waterImage?.image = UIImage(named: "leica")
-        self.waterLabel?.text = String(" - \(plant.waterVolume) ml")
-        self.btnCheckMark.isSelected = plant.waterStatus
+        plantName.text = plant.name
+        plantImage?.image = UIImage(named: "flower")
+        waterImage?.image = UIImage(named: "leica")
+        waterLabel?.text = String(" - \(plant.waterVolume) ml")
+        btnCheckMark.isSelected = plant.waterStatus
         
         btnCheckMark.setImage(UIImage(named:"checkedCheckMark"), for: .normal)
         btnCheckMark.setImage(UIImage(named:"uncheckedCheckMark"), for: .selected)
@@ -62,7 +62,7 @@ class MainTableViewCell: UITableViewCell {
     
     @IBAction func btnCheckMarkPressed(_ sender: UIButton) {
         sender.isSelected.toggle()
-        self.viewModel?.changeCheckMarkWater(at: sender.tag)
+        viewModel?.changeCheckMarkWater(at: sender.tag)
     }
 }
 
