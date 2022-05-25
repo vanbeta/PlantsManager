@@ -16,6 +16,6 @@ protocol CreateAccountDelegate: AnyObject {
     func btnSignInWasPressed()
     func getTerms()
     func getConditions()
-    func createAccount(name: String, email: String, password: String, checkBoxTerm: UIControl.State)
+    func createAccount(email: String, name: String, password: String, checkBoxTerm: UIControl.State)
 }
 		

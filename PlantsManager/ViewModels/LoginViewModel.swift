@@ -20,6 +20,7 @@ class LoginViewModel {
     
     func checkAccessWorker(email: String, password: String, onResult: (ErrorResult) -> Void ) {
         guard let model = model else { return }
+        self.model?.updateUsers()
         
         guard !email.isEmpty    else { onResult(ErrorResult.failure(UserError.emptyEmail))    ; return }
         guard !password.isEmpty else { onResult(ErrorResult.failure(UserError.emptyPassword)) ; return }
@@ -32,7 +33,6 @@ class LoginViewModel {
             onResult(ErrorResult.failure(UserError.notFoundPassword))
             return
         }
-        
         onResult(ErrorResult.success)
     }
 }
@@ -46,7 +46,6 @@ extension LoginViewModel: LoginViewModelDelegate {
         checkAccessWorker(email: email, password: password) { errorResult in
             switch errorResult {
             case .success:
-                coordinator?.model.setCurrentUser(currentUser: email)
                 coordinator?.showMainScreen()
             case .failure(let error):
                 showError.value = error.localizedDescription

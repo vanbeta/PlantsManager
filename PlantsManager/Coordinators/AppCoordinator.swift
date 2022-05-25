@@ -20,9 +20,6 @@ class AppCoordinator: Coordinator {
         self.model = UsersDataManager()
         self.plantsModel = PlantsDataManager()
         self.usersModel = UsersDataManager()
-        
-        self.usersModel.fetchCurrentUser()
-        print("Current user = \(usersModel.currentUser)")
     }
     
     func start() {
