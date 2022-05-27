@@ -11,7 +11,7 @@ import Foundation
 protocol PagePlantViewModelDelegate: AnyObject {
     
     
-    var getPlant: Dynamic<[Plant]> { get }
+    var getPlant: Dynamic<[Plants]> { get }
     func removePlant()
-    func getFullRecomentadions()->[FullRecomentadion]
+    func getFullRecomentadions() -> [FullRecomentadion]
 }

@@ -7,89 +7,84 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-
-struct Plant: Codable {
-    
-    
-    var id = UUID()
-    var name: String
-    var waterStatus: Bool = false
-    var waterVolume: Int
-    var lastWatering: Date?
-    var color: ColorWrapper
-    var recomendations: [Recomendation]
-}
-
-struct ColorWrapper: Codable {
-    
-    
-    var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
-    
-    var uiColor: UIColor {
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
-    }
-    
-    init(uiColor: UIColor) {
-        uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-    }
-}
-
-struct Recomendation: Codable {
-    
-    
-    enum titles: String, Codable {
-        case water = "WATER"
-        case soil = "SOIL"
-        case light = "LIGHT"
-        case temprature = "TEMPRATURE"
-    }
-    var title: titles
-    var period: String
-}
 
 class PlantsDataManager {
     
     
-    var model: [Plant] = []
-    
-    private let userDefaults = UserDefaults.standard
-    private let plantKey = "newPlantList"
+    var model: [Plants] = []
     
     init() {
         self.model = fetchPlants()
     }
     
-    func save(plant: Plant) {
-        model.append(plant)
-        guard let data = try? JSONEncoder().encode(model) else { return }
-        userDefaults.set(data, forKey: plantKey)
+    func save(plant: Plants) {
+        let context = plant.managedObjectContext!
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func fetchPlants() -> [Plants] {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest: NSFetchRequest<Plants> = Plants.fetchRequest()
+
+        do {
+            let data = try context.fetch(fetchRequest)
+            return data
+        } catch let error as NSError {
+            print(error.localizedDescription)
+            return []
+        }
+    }
+    
+    func updatePlants() {
         model = fetchPlants()
     }
     
-    func fetchPlants() -> [Plant] {
-        guard let data = userDefaults.object(forKey: plantKey) as? Data else { return [] }
-        guard let plants = try? JSONDecoder().decode([Plant].self, from: data) else { return [] }
-
-        return plants
+    func getPlants() -> [Plants] {
+        return model
     }
     
-    func removePlant(id: UUID) {
-        var plants = fetchPlants()
-        plants.removeAll(where: {$0.id == id})
-        guard let data = try? JSONEncoder().encode(plants) else { return }
-        userDefaults.set(data, forKey: plantKey)
-        model = fetchPlants()
-    }
+    func removePlant(id: ObjectIdentifier) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
 
-    func changeWaterStatus(at index: Int) {
-        var plants = fetchPlants()
-        var plant = plants.remove(at: index)
-        plant.waterStatus.toggle()
-        plant.lastWatering = Date()
-        plants.insert(plant, at: index)
-        guard let data = try? JSONEncoder().encode(plants) else { return }
-        userDefaults.set(data, forKey: plantKey)
-        model = fetchPlants()
+        let fetchRequest: NSFetchRequest<Plants> = Plants.fetchRequest()
+        
+        if let users = try? context.fetch(fetchRequest) {
+            context.delete(users.first { $0.id == id }!)
+        }
+
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        updatePlants()
+    }
+    
+    func changeWaterStatus(id: ObjectIdentifier) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest: NSFetchRequest<Plants> = Plants.fetchRequest()
+        
+        if let plants = try? context.fetch(fetchRequest) {
+            let user = plants.first { $0.id == id }!
+            user.waterStatus.toggle()
+            user.lastWatering = Date()
+        }
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        updatePlants()
     }
 }

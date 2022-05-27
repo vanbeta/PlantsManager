@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class AddPlantViewModel {
     
@@ -27,13 +28,40 @@ extension AddPlantViewModel: AddPlantDelegate {
     
     
     func btnAddWasPressed() {
-        let arrRecomendation = [Recomendation(title: Recomendation.titles.water, period: "one"),
-                                Recomendation(title: Recomendation.titles.light, period: "two"),
-                                Recomendation(title: Recomendation.titles.soil, period: "three"),
-                                Recomendation(title: Recomendation.titles.temprature, period: "four")]
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
         
-        let plant = Plant(name: "valer", waterStatus: true, waterVolume: 200, color: ColorWrapper(uiColor: colors.randomElement()!), recomendations: arrRecomendation)
+        guard let entity = NSEntityDescription.entity(forEntityName: "Recomendations", in: context) else { return }
         
-        model?.save(plant: plant)
+        let three = Recomendations(entity: entity, insertInto: context)
+        three.title = "WATER"
+        three.period = "one"
+        
+        let four = Recomendations(entity: entity, insertInto: context)
+        four.title = "LIGHT"
+        four.period = "two"
+        
+        let five = Recomendations(entity: entity, insertInto: context)
+        five.title = "SOIL"
+        five.period = "three"
+        
+        let six = Recomendations(entity: entity, insertInto: context)
+        six.title = "TEMPRATURE"
+        six.period = "four"
+
+        let mySet: NSSet = [three, four, five, six]
+        
+        guard let entityPlant = NSEntityDescription.entity(forEntityName: "Plants", in: context) else { return }
+
+        let plant = Plants(entity: entityPlant, insertInto: context)
+        
+        plant.name = "Her"
+        plant.waterStatus = true
+        plant.waterVolume = 200
+        plant.color = colors.randomElement()!
+        
+        plant.recomendations = mySet
+        
+        self.model?.save(plant: plant)
     }
 }

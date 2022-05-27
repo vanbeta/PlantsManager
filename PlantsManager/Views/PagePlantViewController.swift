@@ -22,7 +22,7 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     var coordinator: AppCoordinator?
     var viewModel: PagePlantViewModelDelegate?
     
-    var modelPlant: Plant?
+    var modelPlant: Plants?
     
     let idCell = "recomendationsCell"
     
@@ -113,7 +113,21 @@ extension PagePlantViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCell, for: indexPath) as! RecomendationsTableViewCell
         cell.viewModel = self.viewModel
-        cell.configure(with: modelPlant?.recomendations[indexPath.row] ?? Recomendation(title: Recomendation.titles.water, period: "666") )
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let defaultRecomendation = Recomendations(context: context)
+        defaultRecomendation.period = "666"
+
+        if modelPlant?.recomendations == nil {
+            cell.configure(with: defaultRecomendation)
+            return cell
+        } else {
+            let mas = modelPlant?.recomendations?.allObjects
+            cell.configure(with: mas![indexPath.row] as! Recomendations)
+        }
+
         return cell
     }
 }

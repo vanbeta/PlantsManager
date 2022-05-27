@@ -78,7 +78,7 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showPagePlant(id: UUID) {
+    func showPagePlant(id: ObjectIdentifier) {
         let vc = PagePlantViewController.createObject()
         vc.coordinator = self
         let viewModel = PagePlantViewModel(id: id)

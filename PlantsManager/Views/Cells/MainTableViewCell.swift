@@ -45,7 +45,7 @@ class MainTableViewCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func configure(with plant: Plant, cellIndex: Int) {
+    func configure(with plant: Plants, cellIndex: Int) {
         plantName.text = plant.name
         plantImage?.image = UIImage(named: "flower")
         waterImage?.image = UIImage(named: "leica")
@@ -55,7 +55,7 @@ class MainTableViewCell: UITableViewCell {
         btnCheckMark.setImage(UIImage(named:"checkedCheckMark"), for: .normal)
         btnCheckMark.setImage(UIImage(named:"uncheckedCheckMark"), for: .selected)
         
-        contentView.backgroundColor = plant.color.uiColor
+        contentView.backgroundColor = plant.color as! UIColor
         
         btnCheckMark.tag = cellIndex
     }

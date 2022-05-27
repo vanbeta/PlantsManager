@@ -28,16 +28,16 @@ class UsersDataManager {
 
     
     init() {
-        self.currentUser = fetchCurrentUser()
+        currentUser = fetchCurrentUser()
+        users = fetchUsers()
     }
-        // переписать тут добавление юзера
     
     func addUser(user: User, onResult: (ErrorResult) -> Void ) {
-        guard !user.name.isEmpty     else { onResult(ErrorResult.failure(UserError.emptyName));       return }
-        guard !user.email.isEmpty    else { onResult(ErrorResult.failure(UserError.emptyEmail));      return }
-        guard !user.password.isEmpty else { onResult(ErrorResult.failure(UserError.emptyPassword));   return }
-        guard !users.contains(where: { $0.name == user.name })
-                                     else {onResult(ErrorResult.failure(UserError.nameAlreadyExist)); return }
+        guard !user.name.isEmpty     else { onResult(ErrorResult.failure(UserError.emptyName));         return }
+        guard !user.email.isEmpty    else { onResult(ErrorResult.failure(UserError.emptyEmail));        return }
+        guard !user.password.isEmpty else { onResult(ErrorResult.failure(UserError.emptyPassword));     return }
+        guard !users.contains(where: { $0.email == user.email })
+                                     else { onResult(ErrorResult.failure(UserError.emailAlreadyExist)); return }
 
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -76,28 +76,6 @@ class UsersDataManager {
     func updateUsers() {
         self.users = fetchUsers()
     }
-    
-//    func removeUser() {
-//
-//        // удалить все
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//
-//        let fetchRequest: NSFetchRequest<Users> = Users.fetchRequest()
-//        if let users = try? context.fetch(fetchRequest) {
-//            for user in users {
-//                context.delete(user)
-//            }
-//        }
-//
-//        do {
-//            try context.save()
-//        } catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
-//        print(fetchUsers())
-//
-//    }
     
     func setCurrentUser(currentUser: String) {
         guard let data = try? JSONEncoder().encode(currentUser) else { return }

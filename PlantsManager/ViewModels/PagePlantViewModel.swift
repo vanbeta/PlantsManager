@@ -11,16 +11,19 @@ class PagePlantViewModel {
     
     
     weak var model: PlantsDataManager?
-    var plant: Dynamic<[Plant]> = Dynamic([])
-    var id: UUID?
-    
-    init (id: UUID) {
-        self.id = id
-    }
+    var plant: Dynamic<[Plants]> = Dynamic([])
+    var id: ObjectIdentifier?
+
+    init (id: ObjectIdentifier) {
+           self.id = id
+       }
     
     func setModel(model: PlantsDataManager) {
         self.model = model
+        self.model?.updatePlants()
+        
         let arr = [self.model!.fetchPlants().first(where: {$0.id == self.id})!]
+        
         self.plant.value = arr
     }
     
@@ -29,14 +32,14 @@ class PagePlantViewModel {
 extension PagePlantViewModel: PagePlantViewModelDelegate {
     
     
-    var getPlant: Dynamic<[Plant]> { plant }
+    var getPlant: Dynamic<[Plants]> { plant }
     
     func removePlant() {
         model?.removePlant(id: self.id!)
     }
     
     func getFullRecomentadions() -> [FullRecomentadion] {
-        let modelFull = FullRecomentadions() //!!
+        let modelFull = FullRecomentadions()
         return modelFull.fullRecomentadions
     }
 

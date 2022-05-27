@@ -11,10 +11,10 @@ import Foundation
 protocol MainScreenDelegate: AnyObject {
     
 
-    var getPlants: Dynamic<[Plant]> { get }
+    var getPlants: Dynamic<[Plants]> { get }
     func addWasPressed()
-    func removePlant(id: UUID)
+    func removePlant(id: ObjectIdentifier)
     func changeCheckMarkWater(at index: Int)
-    func plantPressed(id: UUID)
+    func plantPressed(id: ObjectIdentifier)
     func logOut()
 }

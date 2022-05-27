@@ -15,9 +15,9 @@ class MainScreenViewController: UIViewController, Storybordable {
     
     var viewModel: MainScreenDelegate?
     
-    private var plants: [Plant] = []
+    private var plants: [Plants] = []
     private let search = UISearchController(searchResultsController: nil)
-    private var filteredPlants = [Plant]()
+    private var filteredPlants = [Plants]()
     private var searchBarIsEmpty: Bool {
         guard let text = search.searchBar.text else { return false }
         return text.isEmpty
@@ -117,7 +117,7 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! MainTableViewCell
         cell.viewModel = self.viewModel
         
-        var plant: Plant
+        var plant: Plants
 
         if isFiltering {
             plant = filteredPlants[indexPath.row]
@@ -147,8 +147,8 @@ extension MainScreenViewController: UISearchResultsUpdating {
     }
     
     private func filterContentForSearchText(_ searchText: String) {
-        filteredPlants = plants.filter({ (plant: Plant) -> Bool in
-            return plant.name.lowercased().contains(searchText.lowercased())
+        filteredPlants = plants.filter({ (plant: Plants) -> Bool in
+            return plant.name!.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()
     }
