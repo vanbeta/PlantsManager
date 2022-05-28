@@ -26,7 +26,7 @@ class RecomendationsTableViewCell: UICollectionViewCell {
         contentView.layer.masksToBounds = true
     }
     
-    func configure(with recomendation: Recomendations) {
+    func configure(with recomendation: Recomendations) {        
         let fullRecomentadions = viewModel?.getFullRecomentadions().first { $0.title == recomendation.title }
         mainImage?.image = fullRecomentadions?.image
         mainTitle?.text = fullRecomentadions?.title

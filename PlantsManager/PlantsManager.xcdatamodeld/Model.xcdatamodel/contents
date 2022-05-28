@@ -5,8 +5,9 @@
         <attribute name="lastWatering" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="waterStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="waterVolume" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="waterVolume" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="recomendations" toMany="YES" deletionRule="Nullify" destinationEntity="Recomendations" inverseName="plant" inverseEntity="Recomendations"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="plants" inverseEntity="Users"/>
     </entity>
     <entity name="Recomendations" representedClassName=".Recomendations" syncable="YES" codeGenerationType="class">
         <attribute name="period" optional="YES" attributeType="String"/>
@@ -17,10 +18,11 @@
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
+        <relationship name="plants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plants" inverseName="user" inverseEntity="Plants"/>
     </entity>
     <elements>
-        <element name="Plants" positionX="-381.2614135742187" positionY="-549.5362854003906" width="128" height="119"/>
-        <element name="Recomendations" positionX="-145.1619873046875" positionY="-255.4218139648438" width="128" height="88"/>
-        <element name="Users" positionX="-631.417236328125" positionY="-403.5081481933594" width="128" height="74"/>
+        <element name="Plants" positionX="-381.2614135742187" positionY="-549.5362854003906" width="128" height="118"/>
+        <element name="Recomendations" positionX="-193.3025512695312" positionY="-518.2134552001953" width="128" height="88"/>
+        <element name="Users" positionX="-590.6439819335938" positionY="-519.7967681884766" width="128" height="88"/>
     </elements>
 </model>

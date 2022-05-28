@@ -28,39 +28,14 @@ extension AddPlantViewModel: AddPlantDelegate {
     
     
     func btnAddWasPressed() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        guard let entity = NSEntityDescription.entity(forEntityName: "Recomendations", in: context) else { return }
-        
-        let three = Recomendations(entity: entity, insertInto: context)
-        three.title = "WATER"
-        three.period = "one"
-        
-        let four = Recomendations(entity: entity, insertInto: context)
-        four.title = "LIGHT"
-        four.period = "two"
-        
-        let five = Recomendations(entity: entity, insertInto: context)
-        five.title = "SOIL"
-        five.period = "three"
-        
-        let six = Recomendations(entity: entity, insertInto: context)
-        six.title = "TEMPRATURE"
-        six.period = "four"
+        let one = Recomendation(period: "one", title: .water)
+        let two = Recomendation(period: "two", title: .light)
+        let three = Recomendation(period: "three", title: .soil)
+        let four = Recomendation(period: "for", title: .temprature)
 
-        let mySet: NSSet = [three, four, five, six]
-        
-        guard let entityPlant = NSEntityDescription.entity(forEntityName: "Plants", in: context) else { return }
+        let setRecomendation = [one, two, three, four]
 
-        let plant = Plants(entity: entityPlant, insertInto: context)
-        
-        plant.name = "Her"
-        plant.waterStatus = true
-        plant.waterVolume = 200
-        plant.color = colors.randomElement()!
-        
-        plant.recomendations = mySet
+        let plant = Plant(color: colors.randomElement()!, lastWatering: nil, name: "Ivan", waterStatus: true, waterVolume: 123, recomendations: setRecomendation)
         
         self.model?.save(plant: plant)
     }
