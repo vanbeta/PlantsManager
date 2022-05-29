@@ -38,12 +38,16 @@ struct Recomendation {
 class PlantsDataManager {
     
     
-    var model: [Plants] = []
-    var currentUserEmail = ""
+    private var model: [Plants] = []
+    private var currentUserEmail = ""
     
     init(currentUserEmail: String) {
         self.currentUserEmail = currentUserEmail
         self.model = fetchPlants()
+    }
+    
+    func setCurrentUserEmail(email: String) {
+        self.currentUserEmail = email
     }
     
     func save(plant: Plant, emailUser: String) {
@@ -99,7 +103,7 @@ class PlantsDataManager {
         do {
             let data = try context.fetch(fetchRequest)
             let currentUser = data.first { $0.email == currentUserEmail }
-            if data.isEmpty {
+            if currentUser == nil {
                 return []
             }
             return currentUser!.plants!.allObjects as! [Plants]

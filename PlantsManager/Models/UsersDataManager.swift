@@ -22,15 +22,17 @@ class UsersDataManager {
     
     var users: [Users] = []
     
-    private var currentUserEmail = ""
+    private var currentUserEmail = Dynamic("")
     private var currentUserKey = "currentUser"
     private let userDefaults = UserDefaults.standard
 
     
     init() {
-        currentUserEmail = fetchCurrentUser()
+        currentUserEmail.value = fetchCurrentUser()
         users = fetchUsers()
     }
+    
+    var getCurrentUserEmail: Dynamic<String> { self.currentUserEmail }
     
     func addUser(user: User, onResult: (ErrorResult) -> Void ) {
         guard !user.name.isEmpty     else { onResult(ErrorResult.failure(UserError.emptyName));         return }
@@ -80,7 +82,7 @@ class UsersDataManager {
     func setCurrentUser(currentUser: String) {
         guard let data = try? JSONEncoder().encode(currentUser) else { return }
         userDefaults.set(data, forKey: currentUserKey)
-        self.currentUserEmail = fetchCurrentUser()
+        self.currentUserEmail.value = fetchCurrentUser()
     }
     
     func fetchCurrentUser() -> String {
@@ -88,7 +90,7 @@ class UsersDataManager {
         guard let model = try? JSONDecoder().decode(String.self, from: data) else { return "" }
         return model
     }
-    
+        
     func logOutUser() {
         setCurrentUser(currentUser: "")
     }

@@ -16,14 +16,13 @@ class MainScreenViewModel {
     weak var usersModel: UsersDataManager?
     var plants: Dynamic<[Plants]> = Dynamic([])
 
+    func setUsersModel(model: UsersDataManager){
+        self.usersModel = model
+    }
+    
     func setModel(model: PlantsDataManager) {
         self.plants.value = model.fetchPlants()
         self.plantsModel = model
-    }
-    
-    func setUsersModel(model: UsersDataManager){
-        self.usersModel = model
-        self.plantsModel?.currentUserEmail = self.usersModel?.fetchCurrentUser() ?? ""
     }
 }
 

@@ -20,6 +20,16 @@ class AppCoordinator: Coordinator {
         self.model = UsersDataManager()
         self.usersModel = UsersDataManager()
         self.plantsModel = PlantsDataManager(currentUserEmail: usersModel.fetchCurrentUser())
+        
+        bindCurrentUser()
+    }
+    
+    func bindCurrentUser() {
+        usersModel.getCurrentUserEmail.bind { value in
+            DispatchQueue.main.async {
+                self.plantsModel.setCurrentUserEmail(email: value)
+            }
+        }
     }
     
     func start() {
@@ -59,10 +69,11 @@ class AppCoordinator: Coordinator {
     }
     
     func showMainScreen() {
+        plantsModel.setCurrentUserEmail(email: usersModel.fetchCurrentUser())   // подумать почему не работает bind !!!
         let vc = MainScreenViewController.createObject()
         let viewModel = MainScreenViewModel()
-        viewModel.setModel(model: plantsModel)
         viewModel.setUsersModel(model: usersModel)
+        viewModel.setModel(model: plantsModel)
         viewModel.coordinator = self
         vc.viewModel = viewModel
         navigationController.viewControllers.removeAll()
@@ -75,7 +86,7 @@ class AppCoordinator: Coordinator {
         viewModel.setModel(model: plantsModel)
         viewModel.setUserModel(model: usersModel)
         vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: true)
+        navigationController.present(vc, animated: true, completion: nil)
     }
     
     func showPagePlant(id: ObjectIdentifier) {

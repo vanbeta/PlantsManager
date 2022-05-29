@@ -605,10 +605,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tt9-i3-HSq">
-                                        <rect key="frame" x="0.0" y="33" width="414" height="306"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="339"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zXq-lC-Zlp">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="306"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="339"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                             </imageView>
                                         </subviews>
