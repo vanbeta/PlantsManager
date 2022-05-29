@@ -39,39 +39,53 @@ class PlantsDataManager {
     
     
     var model: [Plants] = []
+    var currentUserEmail = ""
     
-    init() {
+    init(currentUserEmail: String) {
+        self.currentUserEmail = currentUserEmail
         self.model = fetchPlants()
     }
     
-    func save(plant: Plant) {
+    func save(plant: Plant, emailUser: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-
-        guard let entity = NSEntityDescription.entity(forEntityName: "Recomendations", in: context) else { return }
-   
-        var allRecomendatios = [Recomendations]()
-        for recomend in plant.recomendations {
-            let one = Recomendations(entity: entity, insertInto: context)
-            one.title = recomend.title.rawValue
-            one.period = recomend.period
-            allRecomendatios.append(one)
-        }
         
-        guard let entityPlant = NSEntityDescription.entity(forEntityName: "Plants", in: context) else { return }
-        
-        let savePlant = Plants(entity: entityPlant, insertInto: context)
+        let fetchRequest: NSFetchRequest<Users> = Users.fetchRequest()
 
-        savePlant.name = plant.name
-        savePlant.waterStatus = plant.waterStatus
-        savePlant.waterVolume = Int64(plant.waterVolume)
-        savePlant.color = plant.color
-
-        savePlant.recomendations = NSSet(array: allRecomendatios)
-        
         do {
-            try context.save()
-        } catch let error as NSError {
+            let data = try context.fetch(fetchRequest)
+            guard let currentUser = (data.first { $0.email! == emailUser }) else {
+                print("Not found current user")
+                return
+            }
+            guard let entity = NSEntityDescription.entity(forEntityName: "Recomendations", in: context) else { return }
+       
+            var allRecomendatios = [Recomendations]()
+            for recomend in plant.recomendations {
+                let one = Recomendations(entity: entity, insertInto: context)
+                one.title = recomend.title.rawValue
+                one.period = recomend.period
+                allRecomendatios.append(one)
+            }
+            
+            guard let entityPlant = NSEntityDescription.entity(forEntityName: "Plants", in: context) else { return }
+            
+            let savePlant = Plants(entity: entityPlant, insertInto: context)
+
+            savePlant.name = plant.name
+            savePlant.waterStatus = plant.waterStatus
+            savePlant.waterVolume = Int64(plant.waterVolume)
+            savePlant.color = plant.color
+            savePlant.user = currentUser
+
+            savePlant.recomendations = NSSet(array: allRecomendatios)
+                    
+            do {
+                try context.save()
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+         } catch let error as NSError {
             print(error.localizedDescription)
         }
     }
@@ -80,11 +94,15 @@ class PlantsDataManager {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
 
-        let fetchRequest: NSFetchRequest<Plants> = Plants.fetchRequest()
+        let fetchRequest: NSFetchRequest<Users> = Users.fetchRequest()
 
         do {
             let data = try context.fetch(fetchRequest)
-            return data
+            let currentUser = data.first { $0.email == currentUserEmail }
+            if data.isEmpty {
+                return []
+            }
+            return currentUser!.plants!.allObjects as! [Plants]
         } catch let error as NSError {
             print(error.localizedDescription)
             return []
@@ -105,16 +123,17 @@ class PlantsDataManager {
 
         let fetchRequest: NSFetchRequest<Plants> = Plants.fetchRequest()
         
-        if let users = try? context.fetch(fetchRequest) {
-            context.delete(users.first { $0.id == id }!)
+        if let plants = try? context.fetch(fetchRequest) {
+            context.delete(plants.first { $0.id == id }!)
         }
-
+        
         do {
             try context.save()
+            updatePlants()
         } catch let error as NSError {
             print(error.localizedDescription)
         }
-        updatePlants()
+        
     }
     
     func changeWaterStatus(id: ObjectIdentifier) {
@@ -130,9 +149,9 @@ class PlantsDataManager {
         }
         do {
             try context.save()
+            updatePlants()
         } catch let error as NSError {
             print(error.localizedDescription)
         }
-        updatePlants()
     }
 }

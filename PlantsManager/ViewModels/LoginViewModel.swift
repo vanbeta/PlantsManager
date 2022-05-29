@@ -11,7 +11,7 @@ class LoginViewModel {
     
     
     weak var coordinator: AppCoordinator?
-    var model: UsersDataManager?
+    weak var model: UsersDataManager?
     var showError = Dynamic("")
     
     func setModel(model: UsersDataManager) {
@@ -48,6 +48,7 @@ extension LoginViewModel: LoginViewModelDelegate {
             case .success:
                 model?.setCurrentUser(currentUser: email)
                 coordinator?.showMainScreen()
+//                 тут обновить а не в координаторе
             case .failure(let error):
                 showError.value = error.localizedDescription
             }

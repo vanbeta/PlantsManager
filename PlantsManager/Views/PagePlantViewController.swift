@@ -19,7 +19,7 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     @IBOutlet weak var labeLastWatering: UILabel!
     @IBOutlet weak var labeNextWatering: UILabel!
     
-    var coordinator: AppCoordinator?
+    var coordinator: AppCoordinator? // <---- убрать это !!!
     var viewModel: PagePlantViewModelDelegate?
     
     var modelPlant: Plants?

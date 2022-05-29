@@ -10,7 +10,7 @@ import Foundation
 class WelcomViewModel {
     
     
-    var coordinator: AppCoordinator?
+    weak var coordinator: AppCoordinator?
 }
 
 extension WelcomViewModel: WelcomViewModelDelegate {

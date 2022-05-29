@@ -9,6 +9,7 @@ import UIKit
 
 class RecomendationsTableViewCell: UICollectionViewCell {
     
+    
     var viewModel: PagePlantViewModelDelegate?
     
     @IBOutlet weak var mainImage: UIImageView!

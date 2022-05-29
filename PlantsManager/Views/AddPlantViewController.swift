@@ -10,7 +10,6 @@ import UIKit
 class AddPlantViewController: UIViewController, Storybordable {
     
     
-    var coordinator: AppCoordinator?
     var viewModel: AddPlantDelegate?
 
     override func viewDidLoad() {

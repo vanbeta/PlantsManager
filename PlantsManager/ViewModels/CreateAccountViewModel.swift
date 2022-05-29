@@ -12,7 +12,7 @@ class CreateAccountViewModel {
 
     
     weak var coordinator: AppCoordinator?
-    var model: UsersDataManager?
+    weak var model: UsersDataManager?
     var showAlert = Dynamic(("", ""))
     var showError = Dynamic("")
 

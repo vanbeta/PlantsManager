@@ -12,17 +12,18 @@ class MainScreenViewModel {
     
     
     weak var coordinator: AppCoordinator?
-    weak var model: PlantsDataManager?
+    weak var plantsModel: PlantsDataManager?
+    weak var usersModel: UsersDataManager?
     var plants: Dynamic<[Plants]> = Dynamic([])
-    var usersModel: UsersDataManager?
 
     func setModel(model: PlantsDataManager) {
-        self.plants.value = model.model
-        self.model = model
+        self.plants.value = model.fetchPlants()
+        self.plantsModel = model
     }
     
     func setUsersModel(model: UsersDataManager){
         self.usersModel = model
+        self.plantsModel?.currentUserEmail = self.usersModel?.fetchCurrentUser() ?? ""
     }
 }
 
@@ -36,13 +37,13 @@ extension MainScreenViewModel: MainScreenDelegate {
     }
     
     func removePlant(id: ObjectIdentifier) {
-        model?.removePlant(id: id)
+        plantsModel?.removePlant(id: id)
         plants.value.removeAll(where: {$0.id == id})
     }
     
     func changeCheckMarkWater(at index: Int) {
-        model?.changeWaterStatus(id: plants.value[index].id)
-        plants.value = (self.model?.fetchPlants())!
+        plantsModel?.changeWaterStatus(id: plants.value[index].id)
+        plants.value = (self.plantsModel?.fetchPlants())!
     }
     
     func plantPressed(id: ObjectIdentifier) {

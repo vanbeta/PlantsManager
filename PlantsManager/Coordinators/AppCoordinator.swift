@@ -18,8 +18,8 @@ class AppCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.model = UsersDataManager()
-        self.plantsModel = PlantsDataManager()
         self.usersModel = UsersDataManager()
+        self.plantsModel = PlantsDataManager(currentUserEmail: usersModel.fetchCurrentUser())
     }
     
     func start() {
@@ -27,7 +27,7 @@ class AppCoordinator: Coordinator {
     }
     
     func showWelcom() {
-        if usersModel.getCurrentUser().isEmpty {
+        if usersModel.fetchCurrentUser().isEmpty {
             let vc = WelcomeViewController.createObject()
             let viewModel = WelcomViewModel()
             viewModel.coordinator = self
@@ -71,9 +71,9 @@ class AppCoordinator: Coordinator {
     
     func showAddPlant() {
         let vc = AddPlantViewController.createObject()
-        vc.coordinator = self
         let viewModel = AddPlantViewModel()
         viewModel.setModel(model: plantsModel)
+        viewModel.setUserModel(model: usersModel)
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }

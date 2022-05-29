@@ -22,13 +22,13 @@ class UsersDataManager {
     
     var users: [Users] = []
     
-    private var currentUser = ""
+    private var currentUserEmail = ""
     private var currentUserKey = "currentUser"
     private let userDefaults = UserDefaults.standard
 
     
     init() {
-        currentUser = fetchCurrentUser()
+        currentUserEmail = fetchCurrentUser()
         users = fetchUsers()
     }
     
@@ -80,17 +80,13 @@ class UsersDataManager {
     func setCurrentUser(currentUser: String) {
         guard let data = try? JSONEncoder().encode(currentUser) else { return }
         userDefaults.set(data, forKey: currentUserKey)
-        self.currentUser = fetchCurrentUser()
+        self.currentUserEmail = fetchCurrentUser()
     }
     
     func fetchCurrentUser() -> String {
         guard let data = userDefaults.object(forKey: currentUserKey) as? Data else { return "" }
         guard let model = try? JSONDecoder().decode(String.self, from: data) else { return "" }
         return model
-    }
-    
-    func getCurrentUser() -> String{
-        return currentUser
     }
     
     func logOutUser() {
