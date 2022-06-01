@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D072F5428463524001150AB /* addTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D072F5328463524001150AB /* addTableViewCell.swift */; };
+		7D072F5628465A1A001150AB /* AddRecomendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D072F5528465A1A001150AB /* AddRecomendation.swift */; };
 		7D4F1B75280FF50D00B579EC /* UIextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B74280FF50D00B579EC /* UIextension.swift */; };
 		7D4F1B77281126D600B579EC /* CreateAccountDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */; };
 		7D4F1B7928129DF100B579EC /* UsersDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F1B7828129DF100B579EC /* UsersDataManager.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D072F5328463524001150AB /* addTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTableViewCell.swift; sourceTree = "<group>"; };
+		7D072F5528465A1A001150AB /* AddRecomendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecomendation.swift; sourceTree = "<group>"; };
 		7D4F1B74280FF50D00B579EC /* UIextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIextension.swift; sourceTree = "<group>"; };
 		7D4F1B76281126D600B579EC /* CreateAccountDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountDelegate.swift; sourceTree = "<group>"; };
 		7D4F1B7828129DF100B579EC /* UsersDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataManager.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				7DFB40EA2817D43800D0FEE3 /* UserError.swift */,
 				7DFB40FD282181BF00D0FEE3 /* PlantsDataManager.swift */,
 				7DA466AF283A4F1B00337FB1 /* FullRecomendations.swift */,
+				7D072F5528465A1A001150AB /* AddRecomendation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			children = (
 				7D6E417E2830EF8F006DC293 /* RecomendationsTableViewCell.swift */,
 				7DFB40EE281BC85A00D0FEE3 /* MainTableViewCell.swift */,
+				7D072F5328463524001150AB /* addTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				7DFB40EB2817D43800D0FEE3 /* UserError.swift in Sources */,
 				7D4F1B75280FF50D00B579EC /* UIextension.swift in Sources */,
 				7D6E417D282D0816006DC293 /* PagePlantViewModelDelegate.swift in Sources */,
+				7D072F5628465A1A001150AB /* AddRecomendation.swift in Sources */,
 				7DFB40ED281A59EA00D0FEE3 /* MainScreenViewController.swift in Sources */,
 				7DA938482790624700815C5D /* AppDelegate.swift in Sources */,
 				7DFB40E92816C89F00D0FEE3 /* LoginViewModelDelegate.swift in Sources */,
@@ -335,6 +342,7 @@
 				7DA466B0283A4F1B00337FB1 /* FullRecomendations.swift in Sources */,
 				7D7EB68B2808146A0024A00A /* LoginViewController.swift in Sources */,
 				7D7EB6842807E3560024A00A /* AppCoordinator.swift in Sources */,
+				7D072F5428463524001150AB /* addTableViewCell.swift in Sources */,
 				7D7EB68F280846E60024A00A /* WelcomViewModel.swift in Sources */,
 				7D6E4179282D07AB006DC293 /* PagePlantViewController.swift in Sources */,
 			);

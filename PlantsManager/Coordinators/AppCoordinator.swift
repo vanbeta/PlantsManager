@@ -86,7 +86,7 @@ class AppCoordinator: Coordinator {
         viewModel.setModel(model: plantsModel)
         viewModel.setUserModel(model: usersModel)
         vc.viewModel = viewModel
-        navigationController.present(vc, animated: true, completion: nil)
+        navigationController.present(vc, animated: true)
     }
     
     func showPagePlant(id: ObjectIdentifier) {

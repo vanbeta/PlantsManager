@@ -39,7 +39,7 @@ class PlantsDataManager {
     
     
     private var model: [Plants] = []
-    private var currentUserEmail = ""
+     var currentUserEmail = ""
     
     init(currentUserEmail: String) {
         self.currentUserEmail = currentUserEmail
