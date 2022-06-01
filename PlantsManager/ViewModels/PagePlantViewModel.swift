@@ -10,6 +10,7 @@ import Foundation
 class PagePlantViewModel {
     
     
+    weak var coordinator: AppCoordinator?
     weak var model: PlantsDataManager?
     var plant: Dynamic<[Plants]> = Dynamic([])
     var id: ObjectIdentifier?
@@ -43,4 +44,7 @@ extension PagePlantViewModel: PagePlantViewModelDelegate {
         return modelFull.fullRecomentadions
     }
 
+    func btnDelPressed() {
+        self.coordinator?.showMainScreen()
+    }
 }

@@ -24,8 +24,6 @@ class AddPlantViewController: UIViewController, Storybordable {
         recomendationTable.delegate = self
                 
         photoView.image = UIImage(named: "photo")
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,8 +37,6 @@ class AddPlantViewController: UIViewController, Storybordable {
         
         recomendationTable.reloadData()
     }
-
-
 }
 
 extension AddPlantViewController: UITableViewDataSource, UITableViewDelegate {

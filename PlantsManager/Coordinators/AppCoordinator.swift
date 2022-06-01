@@ -82,8 +82,8 @@ class AppCoordinator: Coordinator {
     
     func showPagePlant(id: ObjectIdentifier) {
         let vc = PagePlantViewController.createObject()
-        vc.coordinator = self
         let viewModel = PagePlantViewModel(id: id)
+        viewModel.coordinator = self
         viewModel.setModel(model: plantsModel)
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
@@ -101,9 +101,9 @@ class AppCoordinator: Coordinator {
 
     func showRecommendation(str: String, model: AddRecomendation) {
         let vc = EditRecommendationViewController.createObject()
-        vc.maintModel = model
         vc.inName = str
         let viewModel = EditRecommendationViewModel()
+        viewModel.maintModel = model
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }

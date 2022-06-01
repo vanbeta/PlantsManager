@@ -16,6 +16,7 @@ class MainScreenViewController: UIViewController, Storybordable {
     var viewModel: MainScreenDelegate?
     
     private var plants: [Plants] = []
+
     private let search = UISearchController(searchResultsController: nil)
     private var filteredPlants = [Plants]()
     private var searchBarIsEmpty: Bool {

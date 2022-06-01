@@ -14,4 +14,5 @@ protocol PagePlantViewModelDelegate: AnyObject {
     var getPlant: Dynamic<[Plants]> { get }
     func removePlant()
     func getFullRecomentadions() -> [FullRecomentadion]
+    func btnDelPressed()
 }

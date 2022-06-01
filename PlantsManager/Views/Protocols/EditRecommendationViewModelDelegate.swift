@@ -9,5 +9,7 @@ import Foundation
 
 protocol EditRecommendationViewModelDelegate: AnyObject {
     
-    
+    func getAddRecomendations() -> [addCell]
+    func removeAddRecomendations(index: Int)
+    func insertAddRecomendations(cell: addCell, index: Int)
 }

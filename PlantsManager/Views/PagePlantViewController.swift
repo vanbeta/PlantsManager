@@ -19,7 +19,6 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     @IBOutlet weak var labeLastWatering: UILabel!
     @IBOutlet weak var labeNextWatering: UILabel!
     
-    var coordinator: AppCoordinator? // <---- убрать это !!!
     var viewModel: PagePlantViewModelDelegate?
     
     var modelPlant: Plants?
@@ -63,7 +62,7 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
                     self.showRemoveAlert(with: "", and: "Would you like to delete this plant", { [self] Ok in
                     if Ok {
                         self.viewModel?.removePlant()
-                        self.coordinator?.showMainScreen() //!!!
+                        self.viewModel?.btnDelPressed()
                     } })
             })
         ]
