@@ -14,6 +14,10 @@ class AddPlantViewModel {
     
     weak var model: PlantsDataManager?
     weak var userModel: UsersDataManager?
+    weak var coordinator: AppCoordinator?
+    
+    let addRecomendation = AddRecomendation()
+
     
     let colors = [UIColor(red: 0.91, green: 0.96, blue: 0.92, alpha: 1.00),
                   UIColor(red: 0.91, green: 0.95, blue: 0.96, alpha: 1.00),
@@ -44,5 +48,13 @@ extension AddPlantViewModel: AddPlantDelegate {
         let plant = Plant(color: colors.randomElement()!, lastWatering: nil, name: "Ivan", waterStatus: true, waterVolume: 123, recomendations: setRecomendation)
         
         self.model?.save(plant: plant, emailUser: userModel?.fetchCurrentUser() ?? "")
+    }
+    
+    func tablePressed(str: String) {
+        coordinator?.showRecommendation(str: str, model: addRecomendation)
+    }
+    
+    func gerRecomedation() -> AddRecomendation {
+        return addRecomendation
     }
 }

@@ -80,20 +80,30 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showAddPlant() {
-        let vc = AddPlantViewController.createObject()
-        let viewModel = AddPlantViewModel()
-        viewModel.setModel(model: plantsModel)
-        viewModel.setUserModel(model: usersModel)
-        vc.viewModel = viewModel
-        navigationController.present(vc, animated: true)
-    }
-    
     func showPagePlant(id: ObjectIdentifier) {
         let vc = PagePlantViewController.createObject()
         vc.coordinator = self
         let viewModel = PagePlantViewModel(id: id)
         viewModel.setModel(model: plantsModel)
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showAddPlant() {
+        let vc = AddPlantViewController.createObject()
+        let viewModel = AddPlantViewModel()
+        viewModel.setModel(model: plantsModel)
+        viewModel.setUserModel(model: usersModel)
+        viewModel.coordinator = self
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+    }
+
+    func showRecommendation(str: String, model: AddRecomendation) {
+        let vc = EditRecommendationViewController.createObject()
+        vc.maintModel = model
+        vc.inName = str
+        let viewModel = EditRecommendationViewModel()
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }

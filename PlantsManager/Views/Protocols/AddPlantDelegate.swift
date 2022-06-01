@@ -10,4 +10,6 @@ import Foundation
 protocol AddPlantDelegate: AnyObject {
     
     func btnAddWasPressed()
+    func tablePressed(str: String)
+    func gerRecomedation() -> AddRecomendation
 }
