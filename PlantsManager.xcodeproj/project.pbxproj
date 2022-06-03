@@ -150,8 +150,8 @@
 		7D9297BD2796E2C900697523 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7D4F1B7828129DF100B579EC /* UsersDataManager.swift */,
 				7DFB40EA2817D43800D0FEE3 /* UserError.swift */,
+				7D4F1B7828129DF100B579EC /* UsersDataManager.swift */,
 				7DFB40FD282181BF00D0FEE3 /* PlantsDataManager.swift */,
 				7DA466AF283A4F1B00337FB1 /* FullRecomendations.swift */,
 				7D072F5528465A1A001150AB /* AddRecomendation.swift */,

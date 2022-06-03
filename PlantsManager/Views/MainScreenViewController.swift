@@ -95,7 +95,8 @@ class MainScreenViewController: UIViewController, Storybordable {
         viewModel?.addWasPressed()
     }
     
-    @objc func btnLogOutClicked() {
+    @objc
+    func btnLogOutClicked() {
         viewModel?.logOut()
     }
 }

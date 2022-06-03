@@ -9,7 +9,10 @@ import Foundation
 
 protocol AddPlantDelegate: AnyObject {
     
-    func btnAddWasPressed()
     func tablePressed(str: String)
     func gerRecomedation() -> AddRecomendation
+    func cancelAddPlant()
+    func donePressed(name: String, descriptionPlant: String)
+    func getName() -> String
+    func getDescription() -> String
 }

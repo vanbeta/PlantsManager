@@ -15,4 +15,5 @@ protocol PagePlantViewModelDelegate: AnyObject {
     func removePlant()
     func getFullRecomentadions() -> [FullRecomentadion]
     func btnDelPressed()
+    func btnEditPressed()
 }

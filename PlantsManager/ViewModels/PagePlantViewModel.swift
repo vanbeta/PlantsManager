@@ -47,4 +47,8 @@ extension PagePlantViewModel: PagePlantViewModelDelegate {
     func btnDelPressed() {
         self.coordinator?.showMainScreen()
     }
+    
+    func btnEditPressed() {
+        self.coordinator?.showAddPlant(edit: true, currentPlant: plant.value.first!)
+    }
 }

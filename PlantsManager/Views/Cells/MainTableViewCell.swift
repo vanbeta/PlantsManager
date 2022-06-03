@@ -49,7 +49,7 @@ class MainTableViewCell: UITableViewCell {
         plantName.text = plant.name
         plantImage?.image = UIImage(named: "flower")
         waterImage?.image = UIImage(named: "leica")
-        waterLabel?.text = String(" - \(plant.waterVolume) ml")
+        waterLabel?.text = plant.waterVolume
         btnCheckMark.isSelected = plant.waterStatus
         
         btnCheckMark.setImage(UIImage(named:"checkedCheckMark"), for: .normal)

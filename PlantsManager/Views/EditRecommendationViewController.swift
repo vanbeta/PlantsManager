@@ -12,8 +12,8 @@ class EditRecommendationViewController: UIViewController, Storybordable {
     
     
     @IBOutlet weak var tableView: UITableView!
-    var viewModel: EditRecommendationViewModelDelegate?
     
+    var viewModel: EditRecommendationViewModelDelegate?
     let idCell = "mainCell"
     var inName: String?
     var workModel: [String]?
@@ -24,17 +24,17 @@ class EditRecommendationViewController: UIViewController, Storybordable {
         tableView.dataSource = self
         tableView.delegate = self
         
-        workModel = viewModel?.getAddRecomendations().first(where: { $0.mainTitle == inName! })?.moreForRecomendation
+        workModel = viewModel!.getAddRecomendations().first(where: { $0.mainTitle == self.inName! })?.moreForRecomendation
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        
         let btnBack = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
         self.navigationItem.backBarButtonItem = btnBack
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationItem.title = inName
     }
 }
 

@@ -89,13 +89,16 @@ class AppCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showAddPlant() {
+    func showAddPlant(edit: Bool, currentPlant: Plants) {
         let vc = AddPlantViewController.createObject()
-        let viewModel = AddPlantViewModel()
+        let viewModel = AddPlantViewModel(edit: edit, plant: currentPlant)
+        
         viewModel.setModel(model: plantsModel)
         viewModel.setUserModel(model: usersModel)
         viewModel.coordinator = self
+        
         vc.viewModel = viewModel
+        navigationController.viewControllers.removeAll()
         navigationController.pushViewController(vc, animated: true)
     }
 

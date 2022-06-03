@@ -18,6 +18,7 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var labeLastWatering: UILabel!
     @IBOutlet weak var labeNextWatering: UILabel!
+    @IBOutlet weak var descriptionView: UILabel!
     
     var viewModel: PagePlantViewModelDelegate?
     
@@ -57,7 +58,9 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     var menuItems: [UIAction] {
         return [
             UIAction(title: "Edit", image: UIImage(named: "edit"), handler: { (_) in
+                self.viewModel?.btnEditPressed()
             }),
+            
             UIAction(title: "Delete..", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { (_) in
                     self.showRemoveAlert(with: "", and: "Would you like to delete this plant", { [self] Ok in
                     if Ok {
@@ -84,6 +87,7 @@ class PagePlantViewController: UIViewController, Storybordable, UIScrollViewDele
     
     func updatePage() {
         name.text = modelPlant?.name
+        descriptionView.text = modelPlant?.descriptionPlant
         labeLastWatering.text = dateFormatter(date: modelPlant?.lastWatering)
     }
     

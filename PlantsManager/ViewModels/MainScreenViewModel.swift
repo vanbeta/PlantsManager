@@ -32,7 +32,7 @@ extension MainScreenViewModel: MainScreenDelegate {
     var getPlants: Dynamic<[Plants]> { self.plants }
 
     func addWasPressed() {
-        coordinator?.showAddPlant()
+        coordinator?.showAddPlant(edit: false, currentPlant: Plants())
     }
     
     func removePlant(id: ObjectIdentifier) {

@@ -2,10 +2,11 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Plants" representedClassName=".Plants" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="Transformable"/>
+        <attribute name="descriptionPlant" optional="YES" attributeType="String"/>
         <attribute name="lastWatering" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="waterStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="waterVolume" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="waterVolume" optional="YES" attributeType="String"/>
         <relationship name="recomendations" toMany="YES" deletionRule="Nullify" destinationEntity="Recomendations" inverseName="plant" inverseEntity="Recomendations"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="plants" inverseEntity="Users"/>
     </entity>
@@ -21,7 +22,7 @@
         <relationship name="plants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plants" inverseName="user" inverseEntity="Plants"/>
     </entity>
     <elements>
-        <element name="Plants" positionX="-381.2614135742187" positionY="-549.5362854003906" width="128" height="118"/>
+        <element name="Plants" positionX="-381.2614135742187" positionY="-549.5362854003906" width="128" height="149"/>
         <element name="Recomendations" positionX="-193.3025512695312" positionY="-518.2134552001953" width="128" height="88"/>
         <element name="Users" positionX="-590.6439819335938" positionY="-519.7967681884766" width="128" height="88"/>
     </elements>

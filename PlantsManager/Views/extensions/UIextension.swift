@@ -28,7 +28,8 @@ extension UIViewController {
         textField.rightViewMode = .unlessEditing
     }
     
-    @objc func showForgotPassword() {
+    @objc
+    func showForgotPassword() {
         showAlert(with: "ForgotPassword", and: "Sorry we can't do anything)")
     }
     

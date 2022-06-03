@@ -10,32 +10,55 @@ import UIKit
 class AddPlantViewController: UIViewController, Storybordable {
     
 
-    @IBOutlet weak var recomendationTable: UITableView!
+    @IBOutlet weak var viewTable: UITableView!
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var descriptionPlant: UITextView!
+    
     
     var viewModel: AddPlantDelegate?
         
     let idCell = "mainCell"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recomendationTable.dataSource = self
-        recomendationTable.delegate = self
-                
+        viewTable.dataSource = self
+        viewTable.delegate = self
+                        
         photoView.image = UIImage(named: "photo")
+        name.text = viewModel?.getName()
+        descriptionPlant.text = viewModel?.getDescription()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        
+        let btnCancel = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(btnCancelPressed))
+        btnCancel.tintColor = .black
+        self.navigationItem.leftBarButtonItem = btnCancel
+        
+        let btnDone = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(btnDonePressed))
+        self.navigationItem.rightBarButtonItem = btnDone
         
         let btnBack = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = btnBack
         
-        recomendationTable.reloadData()
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationItem.title = "Edit plant"
+        
+        viewTable.reloadData()
+    }
+    
+    @objc
+    func btnCancelPressed() {
+        viewModel?.cancelAddPlant()
+    }
+    
+    @objc
+    func btnDonePressed() {
+        guard !name.text!.isEmpty else { self.showAlert(with: "Error", and: "name is empty"); return}
+        viewModel?.donePressed(name: name.text!, descriptionPlant: descriptionPlant.text)
     }
 }
 
@@ -43,7 +66,7 @@ extension AddPlantViewController: UITableViewDataSource, UITableViewDelegate {
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel!.gerRecomedation().addRecomendations.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,7 +85,6 @@ extension AddPlantViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let arr = viewModel!.gerRecomedation().addRecomendations
-
-        viewModel?.tablePressed(str: arr[indexPath.row].mainTitle)
+        viewModel?.tablePressed(str: arr[indexPath.row].mainTitle)        
     }
 }

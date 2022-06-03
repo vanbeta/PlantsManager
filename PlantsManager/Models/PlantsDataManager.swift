@@ -16,8 +16,9 @@ struct Plant {
     var lastWatering: Date?
     var name: String
     var waterStatus: Bool
-    var waterVolume: Int
+    var waterVolume: String
     var recomendations: [Recomendation]
+    var descriptionPlant: String
 }
 
 struct Recomendation {
@@ -50,7 +51,15 @@ class PlantsDataManager {
         self.currentUserEmail = email
     }
     
-    func save(plant: Plant, emailUser: String) {
+    func save(plant: Plant, emailUser: String, statusEdit: Bool, id: ObjectIdentifier) {
+        if statusEdit {
+            updateToBD(plant: plant, emailUser: emailUser, id: id)
+        } else {
+            saveWorker(plant: plant, emailUser: emailUser)
+        }
+     }
+    
+    func saveWorker(plant: Plant, emailUser: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -78,9 +87,10 @@ class PlantsDataManager {
 
             savePlant.name = plant.name
             savePlant.waterStatus = plant.waterStatus
-            savePlant.waterVolume = Int64(plant.waterVolume)
+            savePlant.waterVolume = plant.waterVolume
             savePlant.color = plant.color
             savePlant.user = currentUser
+            savePlant.descriptionPlant = plant.descriptionPlant
 
             savePlant.recomendations = NSSet(array: allRecomendatios)
                     
@@ -90,6 +100,32 @@ class PlantsDataManager {
                 print(error.localizedDescription)
             }
          } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func updateToBD(plant: Plant, emailUser: String, id: ObjectIdentifier) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest: NSFetchRequest<Plants> = Plants.fetchRequest()
+
+        if let plants = try? context.fetch(fetchRequest) {
+            let user = plants.first { $0.id == id }!
+            
+            user.name = plant.name
+            user.waterStatus = plant.waterStatus
+            user.waterVolume = plant.waterVolume
+            user.descriptionPlant = plant.descriptionPlant
+            
+            for recomend in user.recomendations! {
+                (recomend as! Recomendations).period = plant.recomendations.first(where: { $0.title.rawValue == (recomend as! Recomendations ).title!})?.period
+            }
+        }
+        do {
+            try context.save()
+            updatePlants()
+        } catch let error as NSError {
             print(error.localizedDescription)
         }
     }

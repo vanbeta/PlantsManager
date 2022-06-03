@@ -28,7 +28,7 @@ class LoginViewController: UIViewController, Storybordable {
     func bindError() {
         viewModel?.getShowError.bind { error  in
             DispatchQueue.main.async {
-                self.showAlert(with: "Ошибка", and: error)
+                self.showAlert(with: "Error", and: error)
             }
         }
     }
